@@ -51,8 +51,7 @@ module.exports.custom = {
   * (https://app.mailgun.com/app/domains)                                   *
   *                                                                         *
   **************************************************************************/
-  mailgunDomain: 'mg.ohsoft.com',
-  mailgunSecret: 'key-76dcff1a2b1643223fa2720ea8e139e3',
+  //MAILGUN CONFIG
   //--------------------------------------------------------------------------
   // /\  Configure these to enable support for automated emails.
   // ||  (Important for password recovery, verification, contact form, etc.)
