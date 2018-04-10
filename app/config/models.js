@@ -98,7 +98,7 @@ module.exports.models = {
   ******************************************************************************/
 
   dataEncryptionKeys: {
-    default: '3DXaeT/PjRZfNfl+LHdtXCHyHfbcUBXypW7zW6q7y94='
+    default: 'IwV7MB4c87Qont5WlhlxWc99SEn2Q4uB7fPLuVO0m6o='
   },
 
 
