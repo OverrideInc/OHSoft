@@ -3,9 +3,5 @@
 	<persistence-unit name="persistencia">
 		<jta-data-source>java:/MySqlDS</jta-data-source>				
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>
-			<property name="eclipselink.ddl-generation" value="none"/>
-			<property name="javax.persistence.schema-generation.database.action" value="none"/>
-		</properties>
 	</persistence-unit>
 </persistence>

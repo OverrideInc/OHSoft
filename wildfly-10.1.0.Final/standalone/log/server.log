@@ -1,0 +1,415 @@
+2018-04-14 12:22:27,128 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2018-04-14 12:22:27,423 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2018-04-14 12:22:27,511 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2018-04-14 12:22:27,512 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_161-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/lutz/Documents/wildfly-10.1.0.Final
+	jboss.host.name = lutz
+	jboss.modules.dir = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lutz
+	jboss.qualified.host.name = lutz
+	jboss.server.base.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	jboss.server.config.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log
+	jboss.server.name = lutz
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties
+	module.path = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	org.jboss.boot.log.file = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.13.0-38-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar -mp /home/lutz/Documents/wildfly-10.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/lutz/Documents/wildfly-10.1.0.Final -Djboss.server.base.dir=/home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /home/lutz/Documents/wildfly-10.1.0.Final/bin
+	user.home = /home/lutz
+	user.language = en
+	user.name = lutz
+	user.timezone = America/Bogota
+2018-04-14 12:22:27,513 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties 
+2018-04-14 12:22:27,606 INFO  [org.jboss.vfs] (MSC service thread 1-5) VFS000002: Failed to clean existing content for temp file provider of type temp. Enable DEBUG level log to find what caused this
+2018-04-14 12:22:27,610 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-5) MSC000001: Failed to start service jboss.deployment-mount-provider: org.jboss.msc.service.StartException in service jboss.deployment-mount-provider: WFLYSRV0113: Failed to create temp file provider
+	at org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.start(DeploymentMountProvider.java:127)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: VFS000014: Could not create directory for root '/home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp/vfs/temp' (prefix 'temp', suffix '') after 10 attempts
+	at org.jboss.vfs.TempFileProvider.createTempDir(TempFileProvider.java:157)
+	at org.jboss.vfs.TempFileProvider.create(TempFileProvider.java:109)
+	at org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.start(DeploymentMountProvider.java:125)
+	... 5 more
+
+2018-04-14 12:23:18,242 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-04-14 12:23:18,256 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 8ms
+2018-04-14 12:23:20,582 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2018-04-14 12:23:20,778 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2018-04-14 12:23:20,859 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2018-04-14 12:23:20,862 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_161-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/lutz/Documents/wildfly-10.1.0.Final
+	jboss.host.name = lutz
+	jboss.modules.dir = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lutz
+	jboss.qualified.host.name = lutz
+	jboss.server.base.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	jboss.server.config.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log
+	jboss.server.name = lutz
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties
+	module.path = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	org.jboss.boot.log.file = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.13.0-38-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar -mp /home/lutz/Documents/wildfly-10.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/lutz/Documents/wildfly-10.1.0.Final -Djboss.server.base.dir=/home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /home/lutz/Documents/wildfly-10.1.0.Final/bin
+	user.home = /home/lutz
+	user.language = en
+	user.name = lutz
+	user.timezone = America/Bogota
+2018-04-14 12:23:20,862 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties 
+2018-04-14 12:23:20,950 INFO  [org.jboss.vfs] (MSC service thread 1-6) VFS000002: Failed to clean existing content for temp file provider of type temp. Enable DEBUG level log to find what caused this
+2018-04-14 12:23:20,953 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-6) MSC000001: Failed to start service jboss.deployment-mount-provider: org.jboss.msc.service.StartException in service jboss.deployment-mount-provider: WFLYSRV0113: Failed to create temp file provider
+	at org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.start(DeploymentMountProvider.java:127)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: VFS000014: Could not create directory for root '/home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp/vfs/temp' (prefix 'temp', suffix '') after 10 attempts
+	at org.jboss.vfs.TempFileProvider.createTempDir(TempFileProvider.java:157)
+	at org.jboss.vfs.TempFileProvider.create(TempFileProvider.java:109)
+	at org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.start(DeploymentMountProvider.java:125)
+	... 5 more
+
+2018-04-14 12:24:34,185 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-04-14 12:24:34,201 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 10ms
+2018-04-14 12:24:35,506 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2018-04-14 12:24:35,695 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2018-04-14 12:24:35,773 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2018-04-14 12:24:35,774 DEBUG [org.jboss.as.config] (MSC service thread 1-7) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_161-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/lutz/Documents/wildfly-10.1.0.Final
+	jboss.host.name = lutz
+	jboss.modules.dir = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lutz
+	jboss.qualified.host.name = lutz
+	jboss.server.base.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	jboss.server.config.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log
+	jboss.server.name = lutz
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties
+	module.path = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	org.jboss.boot.log.file = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.13.0-38-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar -mp /home/lutz/Documents/wildfly-10.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/lutz/Documents/wildfly-10.1.0.Final -Djboss.server.base.dir=/home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /home/lutz/Documents/wildfly-10.1.0.Final/bin
+	user.home = /home/lutz
+	user.language = en
+	user.name = lutz
+	user.timezone = America/Bogota
+2018-04-14 12:24:35,775 DEBUG [org.jboss.as.config] (MSC service thread 1-7) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties 
+2018-04-14 12:24:35,840 INFO  [org.jboss.vfs] (MSC service thread 1-7) VFS000002: Failed to clean existing content for temp file provider of type temp. Enable DEBUG level log to find what caused this
+2018-04-14 12:24:35,843 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-7) MSC000001: Failed to start service jboss.deployment-mount-provider: org.jboss.msc.service.StartException in service jboss.deployment-mount-provider: WFLYSRV0113: Failed to create temp file provider
+	at org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.start(DeploymentMountProvider.java:127)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: VFS000014: Could not create directory for root '/home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp/vfs/temp' (prefix 'temp', suffix '') after 10 attempts
+	at org.jboss.vfs.TempFileProvider.createTempDir(TempFileProvider.java:157)
+	at org.jboss.vfs.TempFileProvider.create(TempFileProvider.java:109)
+	at org.jboss.as.server.deployment.DeploymentMountProvider$Factory$ServerDeploymentRepositoryImpl.start(DeploymentMountProvider.java:125)
+	... 5 more
+
+2018-04-14 12:24:49,697 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-04-14 12:24:49,710 INFO  [org.jboss.as] (MSC service thread 1-4) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 8ms
+2018-04-14 12:29:38,177 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2018-04-14 12:29:38,378 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2018-04-14 12:29:38,462 INFO  [org.jboss.as] (MSC service thread 1-8) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2018-04-14 12:29:38,463 DEBUG [org.jboss.as.config] (MSC service thread 1-8) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_161-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/lutz/Documents/wildfly-10.1.0.Final
+	jboss.host.name = lutz
+	jboss.modules.dir = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = lutz
+	jboss.qualified.host.name = lutz
+	jboss.server.base.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	jboss.server.config.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log
+	jboss.server.name = lutz
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties
+	module.path = /home/lutz/Documents/wildfly-10.1.0.Final/modules
+	org.jboss.boot.log.file = /home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.13.0-38-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/lutz/Documents/wildfly-10.1.0.Final/jboss-modules.jar -mp /home/lutz/Documents/wildfly-10.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/lutz/Documents/wildfly-10.1.0.Final -Djboss.server.base.dir=/home/lutz/Documents/wildfly-10.1.0.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /home/lutz/Documents/wildfly-10.1.0.Final/bin
+	user.home = /root
+	user.language = en
+	user.name = root
+	user.timezone = America/Bogota
+2018-04-14 12:29:38,464 DEBUG [org.jboss.as.config] (MSC service thread 1-8) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/lutz/Documents/wildfly-10.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/lutz/Documents/wildfly-10.1.0.Final/standalone/configuration/logging.properties 
+2018-04-14 12:29:40,193 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 24) WFLYDR0001: Content added at location /home/lutz/Documents/wildfly-10.1.0.Final/standalone/data/content/98/f88536d2e6853ba9d3d5fe09d92f800f54a38c/content
+2018-04-14 12:29:40,218 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2018-04-14 12:29:40,271 INFO  [org.xnio] (MSC service thread 1-6) XNIO version 3.4.0.Final
+2018-04-14 12:29:40,291 INFO  [org.xnio.nio] (MSC service thread 1-6) XNIO NIO Implementation Version 3.4.0.Final

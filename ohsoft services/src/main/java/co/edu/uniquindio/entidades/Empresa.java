@@ -9,19 +9,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name=Empresa.BUSCAR_EMPRESA,query="select e from Empresa e where e.idEmpresa = ?1"),
+	@NamedQuery(name=Empresa.LISTAR_EMPRESAS,query="select e from Empresa e")})
 public class Empresa implements Serializable{
 
+	
+	/**
+	 * 
+	 */
+	public final static String BUSCAR_EMPRESA = "empresa.id";
+	public final static String LISTAR_EMPRESAS = "empresa.all";
+	
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "idEmpresa",nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idEmpresa", nullable = false)
 	private int idEmpresa;
-	@Column(name = "nit", length = 50, nullable = false)
+	@Column(name = "nit", length = 50, nullable = false, unique = true)
 	private String nit;
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
-	@Column(name = "correo", length = 50, nullable = false)
+	@Column(name = "correo", length = 50, nullable = false, unique = true)
 	private String correo;
 	@ManyToOne
 	@JoinColumn(name = "idCiudad", nullable = false)
