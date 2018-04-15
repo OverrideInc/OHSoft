@@ -62,8 +62,8 @@ parasails.registerPage('signup', {
       }
 
       // Validate email:
-      if(!argins.emailAddress || !parasails.util.isValidEmailAddress(argins.emailAddress)) {
-        this.formErrors.emailAddress = true;
+      if(!argins.correo || !parasails.util.isValidEmailAddress(argins.correo)) {
+        this.formErrors.correo = true;
       }
 
       // Validate password:

@@ -95,7 +95,7 @@ then redirect to either a special landing page (for newly-signed up users), or t
       // sure no one else managed to grab this email in the mean time since we
       // last checked its availability. (This is a relatively rare edge case--
       // see exit description.)
-      if (await User.count({ emailAddress: user.emailChangeCandidate }) > 0) {
+      if (await User.count({ correo: user.emailChangeCandidate }) > 0) {
         throw 'emailAddressNoLongerAvailable';
       }
 
@@ -110,7 +110,7 @@ then redirect to either a special landing page (for newly-signed up users), or t
         let didNotAlreadyHaveCustomerId = (! user.stripeCustomerId);
         let stripeCustomerId = await sails.helpers.stripe.saveBillingInfo.with({
           stripeCustomerId: user.stripeCustomerId,
-          emailAddress: user.emailChangeCandidate
+          correo: user.emailChangeCandidate
         });
         if (didNotAlreadyHaveCustomerId){
           await User.update({ id: user.id }).set({
@@ -126,7 +126,7 @@ then redirect to either a special landing page (for newly-signed up users), or t
         emailStatus: 'confirmed',
         emailProofToken: '',
         emailProofTokenExpiresAt: 0,
-        emailAddress: user.emailChangeCandidate,
+        correo: user.emailChangeCandidate,
         emailChangeCandidate: '',
       });
       this.req.session.userId = user.id;

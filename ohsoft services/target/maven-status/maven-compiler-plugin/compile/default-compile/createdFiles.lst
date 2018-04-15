@@ -1,10 +1,9 @@
 co/edu/uniquindio/entidades/Telefono.class
 co/edu/uniquindio/negocio/EmpresaEJB.class
+co/edu/uniquindio/dto/LoginDTO.class
 co/edu/uniquindio/services/CiudadServices.class
 co/edu/uniquindio/services/EmpresaServices.class
-co/edu/uniquindio/entidades/Empleado.class
 co/uniquindio/config/CORSResponseFilter.class
 co/edu/uniquindio/entidades/Empresa.class
-co/edu/uniquindio/services/Prueba.class
 co/edu/uniquindio/negocio/CiudadEJB.class
 co/edu/uniquindio/entidades/Ciudad.class

@@ -26,7 +26,7 @@ parasails.registerPage('edit-profile', {
 
     // Set the form data.
     this.formData.fullName = this.me.fullName;
-    this.formData.emailAddress = this.me.emailChangeCandidate ? this.me.emailChangeCandidate : this.me.emailAddress;
+    this.formData.correo = this.me.emailChangeCandidate ? this.me.emailChangeCandidate : this.me.correo;
   },
   mounted: async function() {
     //…
@@ -57,8 +57,8 @@ parasails.registerPage('edit-profile', {
       }
 
       // Validate email:
-      if(!argins.emailAddress) {
-        this.formErrors.emailAddress = true;
+      if(!argins.correo) {
+        this.formErrors.correo = true;
       }
 
       // If there were any issues, they've already now been communicated to the user,

@@ -13,7 +13,7 @@ module.exports = {
       type: 'string'
     },
 
-    emailAddress: {
+    correo: {
       type: 'string'
     },
 
@@ -32,7 +32,7 @@ module.exports = {
 
   fn: async function (inputs, exits) {
 
-    var newEmailAddress = inputs.emailAddress;
+    var newEmailAddress = inputs.correo;
     if (newEmailAddress !== undefined) {
       newEmailAddress = newEmailAddress.toLowerCase();
     }
@@ -43,13 +43,13 @@ module.exports = {
     var desiredEffectReEmail;// ('changeImmediately', 'beginChange', 'cancelPendingChange', 'modifyPendingChange', or '')
     if (
       newEmailAddress === undefined ||
-      (this.req.me.emailStatus !== 'changeRequested' && newEmailAddress === this.req.me.emailAddress) ||
+      (this.req.me.emailStatus !== 'changeRequested' && newEmailAddress === this.req.me.correo) ||
       (this.req.me.emailStatus === 'changeRequested' && newEmailAddress === this.req.me.emailChangeCandidate)
     ) {
       desiredEffectReEmail = '';
-    } else if (this.req.me.emailStatus === 'changeRequested' && newEmailAddress === this.req.me.emailAddress) {
+    } else if (this.req.me.emailStatus === 'changeRequested' && newEmailAddress === this.req.me.correo) {
       desiredEffectReEmail = 'cancelPendingChange';
-    } else if (this.req.me.emailStatus === 'changeRequested' && newEmailAddress !== this.req.me.emailAddress) {
+    } else if (this.req.me.emailStatus === 'changeRequested' && newEmailAddress !== this.req.me.correo) {
       desiredEffectReEmail = 'modifyPendingChange';
     } else if (!sails.config.custom.verifyEmailAddresses || this.req.me.emailStatus === 'unconfirmed') {
       desiredEffectReEmail = 'changeImmediately';
@@ -62,7 +62,7 @@ module.exports = {
     if (_.contains(['beginChange', 'changeImmediately', 'modifyPendingChange'], desiredEffectReEmail)) {
       let conflictingUser = await User.findOne({
         or: [
-          { emailAddress: newEmailAddress },
+          { correo: newEmailAddress },
           { emailChangeCandidate: newEmailAddress }
         ]
       });
@@ -83,7 +83,7 @@ module.exports = {
       // Change now
       case 'changeImmediately':
         Object.assign(valuesToSet, {
-          emailAddress: newEmailAddress,
+          correo: newEmailAddress,
           emailChangeCandidate: '',
           emailProofToken: '',
           emailProofTokenExpiresAt: 0,
@@ -129,7 +129,7 @@ module.exports = {
       let didNotAlreadyHaveCustomerId = (! this.req.me.stripeCustomerId);
       let stripeCustomerId = await sails.helpers.stripe.saveBillingInfo.with({
         stripeCustomerId: this.req.me.stripeCustomerId,
-        emailAddress: newEmailAddress
+        correo: newEmailAddress
       });
       if (didNotAlreadyHaveCustomerId){
         await User.update({ id: this.req.me.id }).set({

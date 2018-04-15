@@ -36,16 +36,20 @@ public class Empresa implements Serializable{
 	private String nombre;
 	@Column(name = "correo", length = 50, nullable = false, unique = true)
 	private String correo;
+	@Column(name = "contrasenia", length = 200, nullable = false)
+	private String contrasenia;
 	@ManyToOne
 	@JoinColumn(name = "idCiudad", nullable = false)
 	private Ciudad ciudad;
 	
-	public Empresa(int idEmpresa, String nit, String nombre, String correo, Ciudad ciudad) {
+	
+	public Empresa(int idEmpresa, String nit, String nombre, String correo, String contrasenia, Ciudad ciudad) {
 		super();
 		this.idEmpresa = idEmpresa;
 		this.nit = nit;
 		this.nombre = nombre;
 		this.correo = correo;
+		this.contrasenia = contrasenia;
 		this.ciudad = ciudad;
 	}
 	
@@ -85,6 +89,14 @@ public class Empresa implements Serializable{
 		this.correo = correo;
 	}
 
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
 	public Ciudad getCiudad() {
 		return ciudad;
 	}
@@ -92,5 +104,7 @@ public class Empresa implements Serializable{
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
-
+	
+	
+	
 }

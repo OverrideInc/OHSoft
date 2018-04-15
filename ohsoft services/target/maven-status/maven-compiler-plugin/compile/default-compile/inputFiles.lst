@@ -4,9 +4,8 @@
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/Ciudad.java
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/Telefono.java
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/package-info.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/Empleado.java
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/negocio/package-info.java
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/negocio/CiudadEJB.java
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/services/EmpresaServices.java
 /home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/negocio/EmpresaEJB.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/services/Prueba.java
+/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/dto/LoginDTO.java

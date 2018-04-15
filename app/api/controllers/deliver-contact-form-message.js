@@ -9,7 +9,7 @@ module.exports = {
 
   inputs: {
 
-    emailAddress: {
+    correo: {
       required: true,
       type: 'string',
       description: 'A return email address where we can respond.',
@@ -67,7 +67,7 @@ your custom config -- usually in \`config/custom.js\`, \`config/staging.js\`,
       layout: false,
       templateData: {
         contactName: inputs.fullName,
-        contactEmail: inputs.emailAddress,
+        contactEmail: inputs.correo,
         topic: inputs.topic,
         message: inputs.message
       }

@@ -48,8 +48,8 @@ parasails.registerPage('forgot-password', {
       var argins = this.formData;
 
       // Validate email:
-      if(!argins.emailAddress) {
-        this.formErrors.emailAddress = true;
+      if(!argins.correo) {
+        this.formErrors.correo = true;
       }
 
       // If there were any issues, they've already now been communicated to the user,

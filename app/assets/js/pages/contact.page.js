@@ -51,8 +51,8 @@ parasails.registerPage('contact', {
       var argins = this.formData;
 
       // Validate email:
-      if(!argins.emailAddress) {
-        this.formErrors.emailAddress = true;
+      if(!argins.correo) {
+        this.formErrors.correo = true;
       }
 
       // Validate name:

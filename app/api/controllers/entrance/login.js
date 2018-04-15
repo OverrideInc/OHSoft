@@ -16,7 +16,7 @@ password attempt.`,
 
   inputs: {
 
-    emailAddress: {
+    correo: {
       description: 'The email to try in this attempt, e.g. "irl@example.com".',
       type: 'string',
       required: true
@@ -54,8 +54,7 @@ and exposed as \`req.me\`.)`
     },
 
     badCombo: {
-      description: `The provided email and password combination does not
-      match any user in the database.`,
+      description: `El usuario con el correo y contraseña suministrados no existe.`,
       responseType: 'unauthorized'
       // ^This uses the custom `unauthorized` response located in `api/responses/unauthorized.js`.
       // To customize the generic "unauthorized" response across this entire app, change that file
@@ -74,8 +73,9 @@ and exposed as \`req.me\`.)`
     // Look up by the email address.
     // (note that we lowercase it to ensure the lookup is always case-insensitive,
     // regardless of which database we're using)
+
     var userRecord = await User.findOne({
-      emailAddress: inputs.emailAddress.toLowerCase(),
+      correo: inputs.correo.toLowerCase(),
     });
 
     // If there was no matching user, respond thru the "badCombo" exit.
