@@ -55,6 +55,7 @@ module.exports.routes = {
   'GET /account':            { action: 'account/view-account-overview' },
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
+  'POST /anexos/anexo_0/file_upload': {action: 'documentation/upload-files'},
 
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗

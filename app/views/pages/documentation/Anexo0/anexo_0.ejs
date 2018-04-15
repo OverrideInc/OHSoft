@@ -21,11 +21,11 @@
 		</li>	
 		</ul>
 		<br/><br/>
-		<form action="subir-archivo.html" name="enviar_archivo_frm" method="post" enctype="multipart/form-data" ng-model="uploadFile()" >
+		<form action="upload-files" name="enviar_archivo_frm" method="post" enctype="multipart/form-data" href="/anexos/anexo_0/file_upload" >
 		<fieldset>
 			<input type="text" rg-model="name"><br>
 			<input type="file" id="buscar_file"  name="archivo_fls" up-loader-model="file" />
-			<input type="submit" id="submit_file" name="subir_btn" value="Subir archivo" />
+			<input type="submit" id="submit_file" name="subir_btn" value="Subir archivo" href="/anexos/anexo_0/file_upload" />
 		
 			</fieldset>
 		</form>
