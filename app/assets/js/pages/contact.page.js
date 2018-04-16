@@ -56,8 +56,8 @@ parasails.registerPage('contact', {
       }
 
       // Validate name:
-      if(!argins.fullName) {
-        this.formErrors.fullName = true;
+      if(!argins.nombre) {
+        this.formErrors.nombre = true;
       }
 
       // Validate topic:

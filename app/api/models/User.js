@@ -30,12 +30,20 @@ module.exports = {
       example: '2$28a8eabna301089103-13948134nad'
     },
 
-    fullName: {
+    nombre: {
       type: 'string',
       required: true,
       description: 'Full representation of the user\'s name',
       maxLength: 120,
       example: 'Lisa Microwave van der Jenny'
+    },
+
+    nit: {
+      type: 'string',
+      required: true,
+      description: 'The enterprise\'s NIT',
+      maxLength: 30,
+      example: '123.456.789 - 0'
     },
 
     isSuperAdmin: {

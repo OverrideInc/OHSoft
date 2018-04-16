@@ -11,7 +11,7 @@
  * Upload files.
  */
 module.exports = async function uploadFiles(req, res) {
-
+	console.log("me cago en todo");
   	  req.file('file').upload({
 				//maxBytes: 10000000
 				dirname: require('path').resolve(sails.config.appPath, 'assets/images')

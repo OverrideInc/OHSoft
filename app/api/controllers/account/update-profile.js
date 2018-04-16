@@ -9,7 +9,7 @@ module.exports = {
 
   inputs: {
 
-    fullName: {
+    nombre: {
       type: 'string'
     },
 
@@ -75,7 +75,7 @@ module.exports = {
     // Start building the values to set in the db.
     // (We always set the fullName if provided.)
     var valuesToSet = {
-      fullName: inputs.fullName,
+      nombre: inputs.nombre,
     };
 
     switch (desiredEffectReEmail) {
@@ -146,7 +146,7 @@ module.exports = {
         subject: 'Your account has been updated',
         template: 'email-verify-new-email',
         templateData: {
-          fullName: inputs.fullName||this.req.me.fullName,
+          nombre: inputs.nombre||this.req.me.nombre,
           token: valuesToSet.emailProofToken
         }
       });
