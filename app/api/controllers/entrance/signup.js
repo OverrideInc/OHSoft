@@ -40,6 +40,13 @@ the account verification message.)`,
       type: 'string',
       example: 'Frida Kahlo de Rivera',
       description: 'The user\'s full name.',
+    },
+
+    nit: {
+      required:true,
+      type: 'string',
+      example: '123.456.789 - 0',
+      description: 'the enterprise\'s NIT'
     }
 
   },
@@ -72,6 +79,7 @@ the account verification message.)`,
      correo: newEmailAddress,
       password: await sails.helpers.passwords.hashPassword(inputs.password),
       nombre: inputs.nombre,
+      nit: inputs.nit,
       tosAcceptedByIp: this.req.ip
     }, sails.config.custom.verifyEmailAddresses? {
       emailProofToken: await sails.helpers.strings.random('url-friendly'),

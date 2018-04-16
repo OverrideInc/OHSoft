@@ -38,6 +38,14 @@ module.exports = {
       example: 'Lisa Microwave van der Jenny'
     },
 
+    nit: {
+      type: 'string',
+      required: true,
+      description: 'The enterprise\'s NIT',
+      maxLength: 30,
+      example: '123.456.789 - 0'
+    },
+
     isSuperAdmin: {
       type: 'boolean',
       description: 'Whether this user is a "super admin" with extra permissions, etc.',
