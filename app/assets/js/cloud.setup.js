@@ -17,13 +17,13 @@ Cloud.setup({
   ,"logout":{"verb":"GET","url":"/api/v1/account/logout","args":[]}
   ,"updatePassword":{"verb":"PUT","url":"/api/v1/account/update-password"
   ,"args":["password"]},
-  "updateProfile":{"verb":"PUT","url":"/api/v1/account/update-profile","args":["fullName","correo"]}
+  "updateProfile":{"verb":"PUT","url":"/api/v1/account/update-profile","args":["nombre","correo"]}
   ,"updateBillingCard":{"verb":"PUT","url":"/api/v1/account/update-billing-card","args":["stripeToken","billingCardLast4","billingCardBrand","billingCardExpMonth","billingCardExpYear"]},
   "login":{"verb":"PUT","url":"/api/v1/entrance/login","args":["correo","password","rememberMe"]},
-  "signup":{"verb":"POST","url":"/api/v1/entrance/signup","args":["correo","password","fullName"]},
+  "signup":{"verb":"POST","url":"/api/v1/entrance/signup","args":["correo","password","nombre"]},
   "sendPasswordRecoveryEmail":{"verb":"POST","url":"/api/v1/entrance/send-password-recovery-email","args":["correo"]},
   "updatePasswordAndLogin":{"verb":"POST","url":"/api/v1/entrance/update-password-and-login","args":["password","token"]},
-  "deliverContactFormMessage":{"verb":"POST","url":"/api/v1/deliver-contact-form-message","args":["correo","topic","fullName","message"]}}
+  "deliverContactFormMessage":{"verb":"POST","url":"/api/v1/deliver-contact-form-message","args":["correo","topic","nombre","message"]}}
   /* eslint-enable */
   
 });
