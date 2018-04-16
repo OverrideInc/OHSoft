@@ -17,7 +17,7 @@ import co.edu.uniquindio.entidades.Telefono;
  */
 @Stateless
 public class TelefonoEJB {
-	//Manjeador de la persistencia (mysql)
+	//Manjeador de la persistencia (mysql).
 	@PersistenceContext(name = "persistencia")
 	protected transient EntityManager em;
 	
@@ -33,7 +33,8 @@ public class TelefonoEJB {
 	/**
 	 * agrega un telefono a la persistencia
 	 * @param telefono, telefono de la empresa.
-	 * @return, verdadero
+	 * @return, verdadero si el telefono no esta en la persistencia y falso si ya
+	 * esta agregado
 	 */
 	public boolean agregarTelefono(Telefono telefono) {
 		if(buscarTelefono(telefono.getIdTelefono()) == null) {
@@ -42,7 +43,11 @@ public class TelefonoEJB {
 		}
 		return false;
 	}
-	
+	/**
+	 * busca un telefono por su identificador.
+	 * @param idTelefono, identificador del telefono.
+	 * @return, retorna el telefono buscado. 
+	 */
 	public Telefono buscarTelefono(int idTelefono){
         Query query = em.createNamedQuery(Telefono.BUSCAR_X_ID);	
         query.setParameter(1,idTelefono);

@@ -15,14 +15,23 @@ import javax.ws.rs.core.MediaType;
 
 import co.edu.uniquindio.entidades.Ciudad;
 import co.edu.uniquindio.negocio.CiudadEJB;
-
+/**
+ * 
+ * @author Juan Jose Ramirez, Juan Camilo Correa Pacheco, Miguelangel Diaz Cabezas.
+ *
+ */
 @Path("/ciudad")
 @RequestScoped
 public class CiudadServices {
-	
+	//Contenedor de la ciudad.
 	@EJB
 	private CiudadEJB cejb;
-	
+	/**
+	 * Servicio registrar ciudad.
+	 * @param ciudad, ciudad a probar.
+	 * @return, retorna  ok si se agrego una 
+	 * precondicion si fallo.
+	 */
 	@POST
 	@Path("/registrar")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -32,7 +41,11 @@ public class CiudadServices {
 				Response.ok().build() : 
 				Response.status(Response.Status.PRECONDITION_FAILED).build();
 	}
-	
+	/**
+	 * Servicio  para buscar ciudad.
+	 * @param idCiudad, identificador para buscar ciudad.
+	 * @return, retorna la ciudad buscada.
+	 */
 	@GET
 	@Path("/buscar/{ciudad}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -42,6 +55,10 @@ public class CiudadServices {
 			Response.ok(c).build();
 	}
 	
+	/**
+	 * Servicio para listar la ciudades.
+	 * @return, retorna la lista de las ciudades.
+	 */
 	@GET
 	@Path("/listar")
 	@Produces(MediaType.APPLICATION_JSON)

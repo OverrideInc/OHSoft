@@ -16,14 +16,24 @@ import javax.ws.rs.core.Response;
 
 import co.edu.uniquindio.entidades.Empresa;
 import co.edu.uniquindio.negocio.EmpresaEJB;
-
+/**
+ * 
+ * @author Juan Jose Ramirez, Juan Camilo Correa Pacheco, Miguelangel Diaz Cabezas.
+ * @version 1.0
+ */
 @Path("/empresa")
 @RequestScoped
 public class EmpresaServices {
-	
+	//contenedor de la empresa.
 	@EJB
 	private EmpresaEJB eejb;
 	
+	/**
+	 * Servicio para registrar empresa.
+	 * @param empresa, empresa a agregar.
+	 * @return, ok si la empresa se agrego correctamente o de lo contrario
+	 * no se agrega si ya existe.
+	 */
 	@POST
 	@Path("/registrar")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -37,6 +47,11 @@ public class EmpresaServices {
 		}
 	}
 	
+	/**
+	 * Servicio para buscar empresa.
+	 * @param idEmpresa,identificador de la empresa.
+	 * @return, retorna la empresa buscada.
+	 */
 	@GET
 	@Path("/buscar/{idEmpresa}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -46,6 +61,10 @@ public class EmpresaServices {
 			Response.ok(empresa).build();
 	}
 	
+	/**
+	 * Servicio para enlistar empresas.
+	 * @return, retorna la lista de la empresas.
+	 */
 	@GET
 	@Path("/listar")
 	@Produces(MediaType.APPLICATION_JSON)
