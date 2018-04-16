@@ -1,11 +1,13 @@
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/services/CiudadServices.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/Empresa.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/uniquindio/config/CORSResponseFilter.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/Ciudad.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/Telefono.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/entidades/package-info.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/negocio/package-info.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/negocio/CiudadEJB.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/services/EmpresaServices.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/negocio/EmpresaEJB.java
-/home/lutz/Documents/OHSoft/ohsoft services/src/main/java/co/edu/uniquindio/dto/LoginDTO.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\package-info.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\TelefonoServices.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\CiudadEJB.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\EmpresaServices.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\uniquindio\config\CORSResponseFilter.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\package-info.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\CiudadServices.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Ciudad.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\EmpresaEJB.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\dto\LoginDTO.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\TelefonoEJB.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Empresa.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Telefono.java
