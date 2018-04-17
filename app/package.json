@@ -10,6 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "ajv": "^6.4.0",
     "async": "2.0.1",
+    "atob": "^2.1.0",
     "lodash": "^4.17.5",
     "sails": "^1.0.1",
     "sails-hook-apianalytics": "^2.0.0",
@@ -18,6 +19,7 @@
     "sails-hook-sockets": "^1.4.0"
   },
   "devDependencies": {
+    "sails": "1.0.1",
     "@sailshq/eslint": "^4.19.3",
     "@sailshq/htmlhint": "^0.9.16",
     "@sailshq/lesshint": "^4.6.6",
@@ -26,7 +28,7 @@
     "typescript": "^2.8.1"
   },
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
+    "start": "sails lift",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
