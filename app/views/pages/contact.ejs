@@ -1,33 +1,33 @@
 <div id="contact" v-cloak>
   <div class="container">
-    <h1 class="text-center">Get in touch</h1>
+    <h1 class="text-center">¡Contacta con nosotros!</h1>
     <div class="contact-form" v-if="!cloudSuccess">
-      <p class="text-center">Have a question for us?  Maybe some feedback?  We love talking to users about NEW_APP_NAME, and we're happy to answer questions about our pricing, roadmap, or business solutions.  Send us a note and we'll get back to you as soon as possible.</p>
+      <p class="text-center">¿Tienes una pregunta para nosotros? ¿O quizá qieres recomendarnos algo? Nos agrada estar en contacto con usuarios y posibles nuevos usuarios de OHSoft, y estaremos felices de responder preguntas sobre nuestros precios, procesos, o soluciones a su empresa. ¡Envíenos un mensaje y le responderemos lo mas rápido posible!</p>
       <hr/>
       <ajax-form action="deliverContactFormMessage" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
         <div class="form-group">
-          <label for="full-name">Name</label>
-          <input class="form-control" id="full-name" name="full-name" type="text"  :class="[formErrors.nombre ? 'is-invalid' : '']" v-model.trim="formData.nombre" placeholder="Sturgis P. Sturgeon" autofocus>
-          <div class="invalid-feedback" v-if="formErrors.nombre">Please let us know what to call you.</div>
+          <label for="full-name">Nombre</label>
+          <input class="form-control" id="full-name" name="full-name" type="text"  :class="[formErrors.nombre ? 'is-invalid' : '']" v-model.trim="formData.nombre" placeholder="Pedro P. Pérez" autofocus>
+          <div class="invalid-feedback" v-if="formErrors.nombre">Por favor, haznos saber tu nombre.</div>
         </div>
         <div class="form-group">
-          <label for="email-address">Email address</label>
-          <input class="form-control" id="email-address" name="email-address" type="email"  :class="[formErrors.correo ? 'is-invalid' : '']" v-model.trim="formData.correo" placeholder="sturgeon@example.com">
-          <div class="invalid-feedback" v-if="formErrors.correo">Please enter a valid email address.</div>
+          <label for="email-address">Correo electrónico</label>
+          <input class="form-control" id="email-address" name="email-address" type="email"  :class="[formErrors.correo ? 'is-invalid' : '']" v-model.trim="formData.correo" placeholder="pedrito@example.com">
+          <div class="invalid-feedback" v-if="formErrors.correo">Por favor, ingrese una dirección válida de correo electrónico.</div>
         </div>
         <div class="form-group">
-          <label for="topic">Topic</label>
-          <input class="form-control" id="topic" name="topic" type="text"  :class="[formErrors.topic ? 'is-invalid' : '']" v-model.trim="formData.topic" placeholder="Pricing question">
-          <div class="invalid-feedback" v-if="formErrors.topic">Please choose a topic for your message.</div>
+          <label for="topic">Tema del contacto</label>
+          <input class="form-control" id="topic" name="topic" type="text"  :class="[formErrors.topic ? 'is-invalid' : '']" v-model.trim="formData.topic" placeholder="Sobre el precio...">
+          <div class="invalid-feedback" v-if="formErrors.topic">Por favor, escriba el tema de su correo.</div>
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea class="form-control" id="message" name="message" :class="[formErrors.message ? 'is-invalid' : '']" v-model.trim="formData.message" placeholder="What is the difference between the &quot;Individual&quot; plan and the &quot;Professional&quot; plan?"></textarea>
-          <div class="invalid-feedback" v-if="formErrors.message">Message cannot be empty.</div>
+          <label for="message">Mensaje</label>
+          <textarea class="form-control" id="message" name="message" :class="[formErrors.message ? 'is-invalid' : '']" v-model.trim="formData.message" placeholder="¿Cómo puedo obtener una cuenta en la aplicación?"></textarea>
+          <div class="invalid-feedback" v-if="formErrors.message">El mensaje no puede estar vacío.</div>
         </div>
-        <p class="text-danger" v-if="cloudError"><small>An error occured while processing your request. Please check your information and try again, or <a href="/contact">contact support</a> if the error persists.</small></p>
+        <p class="text-danger" v-if="cloudError"><small>Ha ocurrido un error inesperado mientras se ejecutaba la acción. Por favor verifique su información e intente de nuevo, o <a href="/contact">contacte con nosotros</a> si el error persiste.</small></p>
         <div class="form-group">
-          <ajax-button type="submit" :syncing="syncing" class="btn btn-dark btn-lg btn-block">Send message</ajax-button>
+          <ajax-button type="submit" :syncing="syncing" class="btn btn-dark btn-lg btn-block">Enviar mensaje</ajax-button>
         </div>
       </ajax-form>
     </div>
