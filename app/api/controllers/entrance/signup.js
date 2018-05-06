@@ -80,6 +80,7 @@ the account verification message.)`,
       password: await sails.helpers.passwords.hashPassword(inputs.password),
       nombre: inputs.nombre,
       nit: inputs.nit,
+      esSuperAdmin: false,
       tosAcceptedByIp: this.req.ip
     }, sails.config.custom.verifyEmailAddresses? {
       emailProofToken: await sails.helpers.strings.random('url-friendly'),
@@ -110,7 +111,7 @@ the account verification message.)`,
       }
     };
 
-    var post_req = http.request(options, function(res){
+    /*var post_req = http.request(options, function(res){
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
           console.log('Response: ' + chunk);
@@ -119,6 +120,7 @@ the account verification message.)`,
     console.log(empresa);
     post_req.write(empresa);
     post_req.end();
+    */
 
     // If billing feaures are enabled, save a new customer entry in the Stripe API.
     // Then persist the Stripe customer id in the database.

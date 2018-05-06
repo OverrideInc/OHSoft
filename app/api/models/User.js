@@ -35,7 +35,7 @@ module.exports = {
       required: true,
       description: 'Full representation of the user\'s name',
       maxLength: 120,
-      example: 'Lisa Microwave van der Jenny'
+      example: 'Override Inc.'
     },
 
     nit: {
@@ -46,7 +46,7 @@ module.exports = {
       example: '123.456.789 - 0'
     },
 
-    isSuperAdmin: {
+    esSuperAdmin: {
       type: 'boolean',
       description: 'Whether this user is a "super admin" with extra permissions, etc.',
       extendedDescription:
