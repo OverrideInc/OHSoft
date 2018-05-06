@@ -141,6 +141,9 @@
 [v-cloak] {
   display: none;
 }
+.danger {
+  background: red !important;
+}
 html,
 body {
   height: 100%;

@@ -3,41 +3,50 @@ const fs = require('fs');
 module.exports = {
 
 
-  friendlyName: 'Listanexos',
+    friendlyName: 'Listanexos',
 
 
-  description: 'Listanexos documentation.',
+    description: 'Listanexos documentation.',
 
-  exits: {
+    exits: {
         success: {
         }
-  },
+    },
 
 
-  fn: async function (inputs, exits) {
+    fn: async function (inputs, exits) {
         const anexoNombre = this.req.query['anexo']
         var rc = await User.findOne({
             id: this.req.session.userId,
         });
 
         var listAnexos = [];
+        const dir = `assets/documents/${rc.nit}/${anexoNombre}`;
 
-        //fs.readdirSync(`assets/documents/${rc.nit}/${inputs.anexo}`)
-        fs.readdirSync(`assets/documents/${rc.nit}/${anexoNombre}`).forEach(file => {
-            listAnexos.push({
-                url: `/documents/${rc.nit}/${anexoNombre}/${file}`,
-                descripcion: file
+        if (fs.existsSync(dir)) {
+            fs.readdirSync(dir).forEach(file => {
+                listAnexos.push({
+                    url: `/documents/${rc.nit}/${anexoNombre}/${file}`,
+                    descripcion: file
+                });
             });
-        });
+        }
 
-        const objRetorno = { 
+        let cantidadMaxima = 4;
+
+        /*Logica de cantidad por anexo*/
+        if (anexoNombre === 'anexo_0') {
+            cantidadMaxima = 3;
+        }
+
+        const objRetorno = {
             nombre: anexoNombre,
             descripcion: 'Aca hay que buscar la descripción',
-            documentos: listAnexos
+            documentos: listAnexos,
+            cantidadMaxima: cantidadMaxima
         }
-    return exits.success(objRetorno);
-
-  }
+        return exits.success(objRetorno);
+    }
 
 
 };
