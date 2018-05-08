@@ -21,7 +21,7 @@ import javax.persistence.NamedQuery;
 public class Ciudad implements Serializable{
 	
 	//Constantes
-	public static final String BUSCAR_X_ID="cuidad.id";
+	public static final String BUSCAR_X_ID="ciudad.id";
 	public static final String LISTAR_CIUDADES="cuidad.all";
 	
 	//Atributos
