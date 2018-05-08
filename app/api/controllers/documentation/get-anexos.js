@@ -1,47 +1,30 @@
-const fs = require('fs');
-
 module.exports = {
 
 
-    friendlyName: 'Listanexos',
+  friendlyName: 'Get anexos',
 
 
-    description: 'Listanexos documentation.',
-
-    exits: {
-        success: {
-        }
-    },
+  description: '',
 
 
-    fn: async function (inputs, exits) {
-        const anexoNombre = this.req.query['anexo']
-        var rc = await User.findOne({
-            id: this.req.session.userId,
-        });
+  inputs: {
 
-        var listAnexos = [];
-        const dir = `assets/documents/${rc.nit}/${anexoNombre}`;
+  },
 
-        if (fs.existsSync(dir)) {
-            fs.readdirSync(dir).forEach(file => {
-                listAnexos.push({
-                    url: `/documents/${rc.nit}/${anexoNombre}/${file}`,
-                    descripcion: file
-                });
-            });
-        }
 
-        let cantidadMaxima = 4;
+  exits: {
+  	success:{
 
-        /*Logica de cantidad por anexo*/
-        if (anexoNombre === 'anexo_0') {
-            cantidadMaxima = 3;
-        }
+  	}
 
-        var _anexos= [
+  },
+
+
+  fn: async function (inputs, exits) {
+
+    var _anexos= [
             { id: "anexo_0", nombre: "Anexo 0", cantidadAnexos: 0, 
-            documentos:[{nombre : 'Mision'},{nombre : 'Visión'},{nombre:'Reseña historiga'},{nombre:'Manual SG-SST'}] },
+            documentos:['Mision','Visión','Reseña historiga','Manual SG-SST'] },
             { id: "anexo_1", nombre: "Anexo 1", cantidadAnexos: 0, documentos:[] },
             { id: "anexo_2", nombre: "Anexo 2", cantidadAnexos: 0, documentos:[]},
             { id: "anexo_3", nombre: "Anexo 3", cantidadAnexos: 0, documentos:[] },
@@ -65,27 +48,13 @@ module.exports = {
             { id: "anexo_21", nombre: "Anexo 21", cantidadAnexos: 0, documentos:[] },
         ];
 
+        const obj={
 
-        var _docs = [];
-
-        _anexos.forEach((anexo) =>{
-            if(anexo.id == anexoNombre){
-                console.log('reached');
-                _docs = anexo.documentos;
-            }
-        })
-
-        const objRetorno = {
-            nombre: anexoNombre,
-            descripcion: 'Aca hay que buscar la descripción',
-            documentos: listAnexos,
-            cantidadMaxima: cantidadMaxima,
-            docs : _docs
+        	anexos: _anexos
         }
+        return exits.success(obj);
 
-        console.log(objRetorno.docs);
-        return exits.success(objRetorno);
-    }
+  }
 
 
 };

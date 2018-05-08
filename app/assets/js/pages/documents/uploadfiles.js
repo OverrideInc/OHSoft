@@ -3,7 +3,9 @@ parasails.registerPage('uploadfiles', {
     data: {
         formData: {
             documents: [],
-            cantidadMaxima: 0
+            cantidadMaxima: 0,
+            lista:[],
+
         },
         formErrors: {},
         syncing: false,
@@ -24,11 +26,15 @@ parasails.registerPage('uploadfiles', {
                 //_this.$set(_this.formData, 'documents', peticion.response.documentos);
                 _this.formData.documents = peticion.response.documentos;
                 _this.formData.cantidadMaxima = peticion.response.cantidadMaxima;
-                console.log(peticion.response);
+                _this.formData.lista = peticion.response.docs;
+                console.log(_this.formData.lista);
             }
         };
         peticion.open("GET", `/api/v1/documentation/listanexos?anexo=${anexoNombre}`, true);
         peticion.send();
+        
+        
+
     },
     mounted: async function () {
     },
@@ -55,6 +61,10 @@ parasails.registerPage('uploadfiles', {
             reader.onerror = function (error) {
                 console.log('Error: ', error);
             };
+        },
+        test: function(){
+            console.log('when call');
+            console.log(this.formData.lista);
         }
     }
 });  

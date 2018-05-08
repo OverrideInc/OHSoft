@@ -4,6 +4,14 @@
 		<div class="signup-form">
 			<p class="text">Aquí debe ir la descripción del anexo</p>
 			<hr/>
+
+
+	<fieldset>
+		<select name="documentos" class="form-control">
+			<option v-for="item in formData.lista">{{ item .nombre}}</option>
+		</select>
+    </fieldset>
+
 			<ajax-form action="uploadfiles" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
 				<div class="form-group">
 					<label for="full-name">Archivo</label>
