@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import co.edu.uniquindio.entidades.Anexos;
-import co.edu.uniquindio.entidades.Ciudad;
+
 /**
  * 
  * @author Juan Jose Ramirez, Juan Camilo Correa Pacheco, Miguelangel Diaz Cabezas.

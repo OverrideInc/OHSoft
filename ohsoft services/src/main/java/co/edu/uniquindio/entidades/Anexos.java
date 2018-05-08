@@ -46,6 +46,8 @@ public Anexos(int idAnexos, String nombre, String descripcion) {
 	this.idAnexos = idAnexos;
 	this.nombre = nombre;
 	this.descripcion = descripcion;
+	
+	
 }
 
 public Anexos() {

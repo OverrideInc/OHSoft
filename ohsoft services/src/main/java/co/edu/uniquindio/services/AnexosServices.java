@@ -14,9 +14,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
 
 import co.edu.uniquindio.entidades.Anexos;
-import co.edu.uniquindio.entidades.Ciudad;
 import co.edu.uniquindio.negocio.AnexosEJB;
-import co.edu.uniquindio.negocio.CiudadEJB;
+
 /**
  * 
  * @author Juan Jose Ramirez, Juan Camilo Correa Pacheco, Miguelangel Diaz Cabezas.

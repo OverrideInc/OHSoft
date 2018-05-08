@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import co.edu.uniquindio.entidades.Ciudad;
+
 import co.edu.uniquindio.entidades.Documentos;
 /**
  * 
@@ -48,7 +48,7 @@ public class DocumentosEJB {
 	 * @return, retorna la lista de la persistencia.
 	 */
 	public List<Documentos> listarDocumentos(){
-		Query q = em.createNamedQuery(Ciudad.LISTAR_CIUDADES);
+		Query q = em.createNamedQuery(Documentos.LISTAR_DOCUMENTOS);
 		List<Documentos> result = q.getResultList();
 		return result;
 	}

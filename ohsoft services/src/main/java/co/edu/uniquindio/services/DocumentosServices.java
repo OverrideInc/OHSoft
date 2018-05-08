@@ -14,9 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
 
 import co.edu.uniquindio.entidades.Anexos;
-import co.edu.uniquindio.entidades.Ciudad;
 import co.edu.uniquindio.entidades.Documentos;
-import co.edu.uniquindio.negocio.CiudadEJB;
 import co.edu.uniquindio.negocio.DocumentosEJB;
 /**
  * 
@@ -52,7 +50,7 @@ public class DocumentosServices {
 	@GET
 	@Path("/buscar/{documento}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscarCiudad(@PathParam("ciudad") int idDocumento) {
+	public Response buscarDocumento(@PathParam("Documento") int idDocumento) {
 		Documentos c = dejb.buscarDocumento(idDocumento);
 		return c == null ? Response.noContent().build() : 
 			Response.ok(c).build();
