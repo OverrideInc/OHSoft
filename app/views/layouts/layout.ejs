@@ -49,7 +49,8 @@
           <!-- Only in desktop nav -->
           <% if(!me.esSuperAdmin){ %> 
            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 d-sm-block" href="/anexos">Anexos</a>
-          <% } %>
+          <% } else { %>
+           <a class="nav-item nav-link ml-2 ml-md-0 mr-2 d-sm-block" href="/empresas">Empresas</a><% } %>
           <div class="nav-item dropdown d-none d-sm-block">
             <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cuenta</a>
             <div class="dropdown-menu account-menu" aria-labelledby="header-account-menu-link">
@@ -159,6 +160,7 @@
     <script src="/js/pages/homepage.page.js"></script>
     <script src="/js/pages/legal/privacy.page.js"></script>
     <script src="/js/pages/legal/terms.page.js"></script>
+    <script src="/js/pages/management/listaempresas.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

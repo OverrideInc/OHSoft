@@ -18,6 +18,8 @@ module.exports.routes = {
   'GET /welcome': { action: 'dashboard/view-welcome' },
   'GET /anexos/*': { action: 'documentation/view-anexos' },
   'GET /anexos': { action: 'documentation/view-anexos' },
+  'GET /empresas': { action: 'management/view-empresas' },
+  'GET /gempresas': { action: 'management/get-empresas' },
 
   'GET /api/v1/documentation/listanexos': { action: 'documentation/listanexos' },
 

@@ -42,7 +42,6 @@ parasails.registerPage('uploadfiles', {
             window.location.reload();
         },
         handleParsingForm: function () {
-            debugger;
             this.formErrors = {};
             var argins = this.formData;
             return argins;
