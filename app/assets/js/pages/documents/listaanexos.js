@@ -2,7 +2,9 @@ parasails.registerPage('listaanexos', {
     data: {
         formData: {
             anexos: [],
-            documents: []
+            documents: [],
+            query_pars : [], 
+            nit : ''
         },
         formErrors: {},
         syncing: false,
@@ -10,14 +12,22 @@ parasails.registerPage('listaanexos', {
         cloudSuccess: false,
     },
     beforeMount: function () {
-
             var _this=this;
+            this.formData.nit = decodeURIComponent(
+                window.location.search.replace(
+                    new RegExp("^(?:.*[&\\?]" 
+                    + encodeURIComponent('nit').replace(/[\.\+\*]/g, "\\$&") 
+                    + "(?:\\=([^&]*))?)?.*$", "i"), "$1"
+                ));
+            var _nit = this.formData.nit;
             var peticion = new XMLHttpRequest();
             peticion.responseType = 'json';
             peticion.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-        
                     _this.formData.anexos=peticion.response.anexos;
+                    if(!_nit){
+                        _this.formData.nit = peticion.response.nit;
+                    }
                 }
             };
             peticion.open("GET", `/getAnexos`, true);

@@ -16,11 +16,11 @@ module.exports.routes = {
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
   'GET /': { action: 'view-homepage-or-redirect' },
   'GET /welcome': { action: 'dashboard/view-welcome' },
-  'GET /anexos/*': { action: 'documentation/view-anexos' },
-  'GET /anexos': { action: 'documentation/view-anexos' },
+  'GET /anexos': { action: 'documentation/view-anexos', skipAssets : true },
   'GET /empresas': { action: 'management/view-empresas' },
   'GET /gempresas': { action: 'management/get-empresas' },
   'GET /getAnexos': { action: 'documentation/get-anexos' },
+  'GET /anexos/anexo_0': { view: 'pages/documentation/Anexo0/anexo_0' },
 
   'GET /api/v1/documentation/listanexos': { action: 'documentation/listanexos' },
 
@@ -28,7 +28,6 @@ module.exports.routes = {
   'GET /legal/terms': { view: 'pages/legal/terms' },
   'GET /legal/privacy': { view: 'pages/legal/privacy' },
   'GET /contact': { view: 'pages/contact' },
-  'GET /anexos/anexo_0': { view: 'pages/documentation/Anexo0/anexo_0' },
 
   'GET /signup': { action: 'entrance/view-signup' },
   'GET /email/confirm': { action: 'entrance/confirm-email' },

@@ -5,7 +5,7 @@
       <ul class="collection with-header" style="list-style: none;">
         <li v-for="item in formData.anexos">
           <i class="material-icons orange"></i>
-          <a :href="'/anexos/anexo_0?anexo=' + item.id" class="secondary-content">
+          <a :href="'/anexos/anexo_0?anexo=' + item.id + '&nit=' + formData.nit" class="secondary-content">
             <div class="alert" v-bind:class="obtenerClass(item)" role="alert">
               <i class="fas fa-folder" style="color:black">folder</i>&nbsp;{{ item.nombre }} - Cantidad {{ item.cantidadAnexos }}
             </div>

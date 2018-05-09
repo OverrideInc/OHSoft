@@ -47,10 +47,14 @@ module.exports = {
             { id: "anexo_20", nombre: "Anexo 20", cantidadAnexos: 0, documentos:[] },
             { id: "anexo_21", nombre: "Anexo 21", cantidadAnexos: 0, documentos:[] },
         ];
+  var userRecord = await User.findOne({
+      id: this.req.session.userId
+    });
 
         const obj={
 
-        	anexos: _anexos
+        	anexos: _anexos,
+          nit : userRecord.nit
         }
         return exits.success(obj);
 

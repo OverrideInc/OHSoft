@@ -14,6 +14,14 @@ parasails.registerPage('uploadfiles', {
     },
     beforeMount: function () {
         const anexoNombre = decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent('anexo').replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+        var nit;
+        nit = decodeURIComponent(
+                window.location.search.replace(
+                    new RegExp("^(?:.*[&\\?]" 
+                    + encodeURIComponent('nit').replace(/[\.\+\*]/g, "\\$&") 
+                    + "(?:\\=([^&]*))?)?.*$", "i"), "$1"
+                ));
+        console.log('nit = ' + nit);
         this.formData.anexo = anexoNombre;
 
         var peticion = new XMLHttpRequest();
@@ -27,10 +35,9 @@ parasails.registerPage('uploadfiles', {
                 _this.formData.documents = peticion.response.documentos;
                 _this.formData.cantidadMaxima = peticion.response.cantidadMaxima;
                 _this.formData.lista = peticion.response.docs;
-                console.log(_this.formData.lista);
             }
         };
-        peticion.open("GET", `/api/v1/documentation/listanexos?anexo=${anexoNombre}`, true);
+        peticion.open("GET", `/api/v1/documentation/listanexos?anexo=${anexoNombre}&nit=${nit}`, true);
         peticion.send();
         
         

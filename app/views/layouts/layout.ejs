@@ -59,7 +59,11 @@
             </div>
           </div>
           <!-- Only in mobile nav -->
-          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/anexos">Anexos</a>
+          <% if(!me.esSuperAdmin){ %> 
+          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="'/anexos' + me.nit">Anexos</a>
+          <% } else { %>
+          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/empresas">Empresas</a>
+          </a><% } %>
           <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/account">Configuración</a>
           <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/logout">Cerrar sesión</a>
           <% } else { %>
