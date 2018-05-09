@@ -20,6 +20,7 @@ public class DocumentosEJB {
 	@PersistenceContext(name = "persistencia")
 	protected transient EntityManager em;
 	
+	
 	/**
 	 * buscar la ciudad por si identificador si esta en la persistencia.
 	 * @param idCiudad, identificador de la ciudad.
@@ -44,11 +45,18 @@ public class DocumentosEJB {
 		return false;
 	}
 	/**
-	 * enlista las ciudades que hay en la persistencia.
+	 * enlista los documentos que hay en la persistencia.
 	 * @return, retorna la lista de la persistencia.
 	 */
 	public List<Documentos> listarDocumentos(){
 		Query q = em.createNamedQuery(Documentos.LISTAR_DOCUMENTOS);
+		List<Documentos> result = q.getResultList();
+		return result;
+	}
+	
+	public List<Documentos> listarPorAnexo(int idAnexo){
+		Query q = em.createNamedQuery(Documentos.LISTAR_PORANEXO);
+		q.setParameter(2, idAnexo);
 		List<Documentos> result = q.getResultList();
 		return result;
 	}

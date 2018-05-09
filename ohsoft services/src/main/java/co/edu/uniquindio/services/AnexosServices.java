@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 
 import co.edu.uniquindio.entidades.Anexos;
 import co.edu.uniquindio.negocio.AnexosEJB;
+import co.edu.uniquindio.negocio.DocumentosEJB;
 
 /**
  * 
@@ -27,6 +28,8 @@ public class AnexosServices {
 	//Contenedor de la ciudad.
 	@EJB
 	private AnexosEJB nejb;
+	private DocumentosEJB dejb;
+	
 	/**
 	 * Servicio registrar ciudad.
 	 * @param ciudad, ciudad a probar.
@@ -63,8 +66,11 @@ public class AnexosServices {
 	@GET
 	@Path("/listar")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response listarCiudades() {
+	public Response listarAnexos() {
 		List<Anexos> c = nejb.listarAnexo();
+		for(Anexos a : c){
+			
+		}
 		return c == null ? Response.noContent().build() : 
 			Response.ok(c).build();
 	}

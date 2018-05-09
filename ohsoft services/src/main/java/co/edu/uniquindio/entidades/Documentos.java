@@ -11,12 +11,15 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 @NamedQuery(name=Documentos.BUSCAR_DOCUMENTO,query="select c from Documentos c where c.idDocumento = ?1 "),
-@NamedQuery(name=Documentos.LISTAR_DOCUMENTOS,query="select c from Documentos c")})
+@NamedQuery(name=Documentos.LISTAR_DOCUMENTOS,query="select c from Documentos c"),
+@NamedQuery(name=Documentos.LISTAR_PORANEXO,query="select c from Documentos c where c.anexos.idAnexos = ?2")}
+)
 public class Documentos implements Serializable {
 	
 	//Constantes
 		public final static String BUSCAR_DOCUMENTO = "documento.id";
 		public final static String LISTAR_DOCUMENTOS = "documento.all";
+		public final static String LISTAR_PORANEXO = "documento.anexo";
 	
 	//Atributos
 		@Id
