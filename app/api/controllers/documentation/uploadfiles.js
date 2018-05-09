@@ -64,6 +64,18 @@ module.exports = {
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
+		// var select = document.getElementById("page-wrap");
+		function h(){
+		var select = document.getElementById("documentoz");
+		var seleccted;
+		select.addEventListener('change',
+  		function(){
+    		var selectedOption = this.options[select.selectedIndex];
+    		seleccted=selectedOption.value;
+ 		 });
+		return seleccted;
+		}
+
 		fs.writeFile(dir + '/' + inputs.name, inputs.file.split(',')[1], 'base64', function (err) {
 			if (err) throw err;
 			console.log('done');

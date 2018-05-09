@@ -5,7 +5,7 @@ parasails.registerPage('uploadfiles', {
             documents: [],
             cantidadMaxima: 0,
             lista:[],
-
+            selected:''
         },
         formErrors: {},
         syncing: false,
