@@ -917,6 +917,14 @@
     /* eslint-enable */
   };//ƒ
 
+  parasails.util.isValidPassword = function(value){
+    if(!value || typeof value != 'string'){
+      return false;
+    }
+
+    var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    return re.test(value);
+  }
 
   /**
    * parasails.utils

@@ -66,6 +66,11 @@ the account verification message.)`,
       description: 'The provided email address is already in use.',
     },
 
+    unsecurePassword: {
+      statusCode: 409,
+      description: 'The password isn\'t secure enough'
+    },
+
   },
 
 
