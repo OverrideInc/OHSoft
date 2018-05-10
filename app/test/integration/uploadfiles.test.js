@@ -1,22 +1,13 @@
 var url = 'http://localhost:1337/';
-var supertest = require('supertest')(url);
+var request = require('supertest')(url);
 
 describe('uploadfiles.js', function() {
 
   describe('#uploadfiles()', function() {
     it('upload file to the app', function (done) {
     	req=request.post("/api/v1/documentation/uploadfiles");
-    	req.send({
-    		inputs: {
-		name:"mision",
-
-		file:"",
-
-		anexo:,
-
-		name: 
-	}
-    	})
+      req.attach('file', 'C:/Users/Miguel A/Desktop/capture.png');
+    	
     	req.end(function(err,res){
     		if(err)
     		{
@@ -34,3 +25,15 @@ describe('uploadfiles.js', function() {
   });
 
 });
+
+// req.send({
+//         inputs: {
+//     name:"mision",
+
+//     file:"",
+
+//     anexo:,
+
+//     name: 
+//   }
+//       })

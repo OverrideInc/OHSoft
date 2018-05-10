@@ -1,5 +1,5 @@
 var url = 'http://localhost:1337/';
-var supertest = require('supertest')(url);
+var request = require('supertest')(url);
 
 describe("",function(){
 	it("login in the aplication", function(done){

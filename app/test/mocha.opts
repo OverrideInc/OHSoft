@@ -1,0 +1,6 @@
+--bail
+--timeout 5000
+test/lifecycle.test.js
+test/integration/*.test.js
+
+
