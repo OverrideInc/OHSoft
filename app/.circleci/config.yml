@@ -38,4 +38,11 @@ jobs:
         name: testear 
         commaand: npm test
 
+        
+      test:
+      override:
+        - mocha test --reporter mocha-junit-reporter:
+            environment:
+            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml  
+
 

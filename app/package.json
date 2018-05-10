@@ -26,6 +26,7 @@
     "coffeescript": "^2.3.0",
     "grunt": "1.0.1",
     "istanbul": "^1.0.0-alpha.2",
+    "mocha-junit-reporter": "^1.17.0",
     "sails": "1.0.1",
     "sails-hook-grunt": "^3.0.2",
     "supertest": "^3.0.0",
