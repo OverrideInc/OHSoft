@@ -1,2 +1,12 @@
 general:
   build_dir: app
+
+
+  deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: app
+
+
+      
