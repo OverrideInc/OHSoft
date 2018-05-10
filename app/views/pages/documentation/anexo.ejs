@@ -6,9 +6,11 @@
 			<hr/>
 
 			<fieldset>
-				<select  v-model="formData.nombre">
+				<label for="nombreS"> Nombre del documento </label>
+				<select class="form-control" id = "nombreS" :class="[formData.nombre ? '' : 'is-invalid']" v-model="formData.nombre">
 					<option v-for="item in formData.lista">{{ item.nombre}}</option>
 				</select>
+				<div class="invalid-feedback" v-if="formErrors.password">Por favor ingrese una contraseña válida. La contraseña debe tener al menos una longitud de ocho (8) caracteres entre letras mayúsculas, letras minúscula y números.</div>
 				<hr>
    			 </fieldset>
 
@@ -16,6 +18,7 @@
 				<div class="form-group">
 					<label for="archivo">Archivo</label>
 					<input class="form-control" id="archivo" type="file"@change="previewFiles" ref="myFiles" accept=".docx,.pdf,.xlsx,image/*" focus-first>
+
 					<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
 						<i class="fas fa-arrow-alt-circle-up"></i> Subir archivo
 					</ajax-button>

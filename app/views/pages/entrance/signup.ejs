@@ -8,7 +8,7 @@
         <div class="form-group">
           <label for="nit">NIT</label>
           <input class="form-control" id="nit" type="text"  :class="[formErrors.nit ? 'is-invalid' : '']" v-model.trim="formData.nit" placeholder="123.456.789 - 0" focus-first>
-          <div class="invalid-feedback" v-if="formErrors.nit">Por favor ingrese el nombre de la empresa.</div>
+          <div class="invalid-feedback" v-if="formErrors.nit">Por favor ingrese el NIT de la empresa.</div>
         </div>
         <div class="form-group">
           <label for="full-name">Nombre Empresa</label>
@@ -23,7 +23,7 @@
         <div class="form-group">
           <label for="password">Contraseña</label>
           <input class="form-control" id="password" type="password"  :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password" placeholder="••••••••">
-          <div class="invalid-feedback" v-if="formErrors.password">Por favor ingrese una contraseña.</div>
+          <div class="invalid-feedback" v-if="formErrors.password">Por favor ingrese una contraseña válida. La contraseña debe tener al menos una longitud de ocho (8) caracteres entre letras mayúsculas, letras minúscula y números.</div>
         </div>
         <div class="form-group">
           <label for="confirm-password">Confirmar contraseña</label>
