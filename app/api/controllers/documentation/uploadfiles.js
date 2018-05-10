@@ -17,6 +17,11 @@ module.exports = {
 			type: 'string'
 		},
 
+		name: {
+			required: true,
+			type: 'string',
+		},
+
 		anexo: {
 			required: true,
 			type: 'string'
@@ -40,21 +45,13 @@ module.exports = {
 			description: 'Archivo subido correctamente.'
 		},
 
-		invalid: {
-			responseType: 'badRequest',
-			description: 'The provided fullName, password and/or email address are invalid.',
-			extendedDescription: 'If this request was sent from a graphical user interface, the request ' +
-				'parameters should have been validated/coerced _before_ they were sent.'
-		},
-
 	},
 
 
 	fn: async function (inputs, exits, req) {
 		
 		var dir = `assets/documents/${inputs.nit}`;
-		// var dir = 'assets/documents/' + rc.nit;
-		console.log(dir);
+
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
@@ -64,9 +61,14 @@ module.exports = {
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
-		// var select = document.getElementById("page-wrap");
 
-		fs.writeFile(dir + '/' + inputs.nombre, inputs.file.split(',')[1], 'base64', function (err) {
+		var nombre = inputs.nombre + '.' + inputs.name.split('.')[1]
+
+		dir += `/${nombre}`;
+
+		console.log(dir);
+
+		fs.writeFile(dir, inputs.file.split(',')[1], 'base64', function (err) {
 			if (err) throw err;
 			console.log('done');
 		});

@@ -3,9 +3,11 @@ parasails.registerPage('uploadfiles', {
     data: {
         formData: {
             documents: [],
-            cantidadMaxima: 0,
             lista:[],
-            selected:''
+            nombre:'',
+            nit:'', 
+            anexo:'', 
+            name:''
         },
         formErrors: {},
         syncing: false,
@@ -23,6 +25,7 @@ parasails.registerPage('uploadfiles', {
                 ));
         console.log('nit = ' + nit);
         this.formData.anexo = anexoNombre;
+        this.formData.nit = nit;
 
         var peticion = new XMLHttpRequest();
         peticion.responseType = 'json';
@@ -31,9 +34,7 @@ parasails.registerPage('uploadfiles', {
             if (this.readyState == 4 && this.status == 200) {
                 _this.formData.nombreAnexo = peticion.response.nombre;
                 _this.formData.descripcionAnexo = peticion.response.descripcion;
-                //_this.$set(_this.formData, 'documents', peticion.response.documentos);
                 _this.formData.documents = peticion.response.documentos;
-                _this.formData.cantidadMaxima = peticion.response.cantidadMaxima;
                 _this.formData.lista = peticion.response.docs;
             }
         };

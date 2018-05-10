@@ -6,25 +6,29 @@
 			<hr/>
 
 			<fieldset>
-				<select  v-model="formData.selected">
-					<option v-for="item in formData.lista">{{ item .nombre}}</option>
+				<select  v-model="formData.nombre">
+					<option v-for="item in formData.lista">{{ item.nombre}}</option>
 				</select>
 				<hr>
    			 </fieldset>
 
 			<ajax-form action="uploadfiles" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
 				<div class="form-group">
-					<label for="full-name">Archivo</label>
-					<input class="form-control" id="full-name" type="file"@change="previewFiles" ref="myFiles" placeholder="OverrideSA" accept=".docx,.pdf,.xlsx,image/*" focus-first>
+					<label for="archivo">Archivo</label>
+					<input class="form-control" id="archivo" type="file"@change="previewFiles" ref="myFiles" accept=".docx,.pdf,.xlsx,image/*" focus-first>
 					<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
 						<i class="fas fa-arrow-alt-circle-up"></i> Subir archivo
 					</ajax-button>
 				</div>
-				<ul id="example-1">
+
+				<label for="downs">Descargar</label>
+
+				<ul id="downs">
 					<li v-for="item in formData.documents">
 						<a :href="item.url" download>{{ item.descripcion }}</a>
 					</li>
 				</ul>
+
 			</ajax-form>
 
 		</div>

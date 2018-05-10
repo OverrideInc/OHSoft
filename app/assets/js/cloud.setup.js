@@ -24,7 +24,7 @@ Cloud.setup({
     , "updateBillingCard": { "verb": "PUT", "url": "/api/v1/account/update-billing-card", "args": ["stripeToken", "billingCardLast4", "billingCardBrand", "billingCardExpMonth", "billingCardExpYear"] },
     "login": { "verb": "PUT", "url": "/api/v1/entrance/login", "args": ["correo", "password", "rememberMe"] },
     "signup": { "verb": "POST", "url": "/api/v1/entrance/signup", "args": ["correo", "password", "nombre", "nit"] },
-    "uploadfiles": { "verb": "POST", "url": "/api/v1/documentation/uploadfiles", "args": ["nombre", "nit"] },
+    "uploadfiles": { "verb": "POST", "url": "/api/v1/documentation/uploadfiles", "args": ["name","anexo","nombre", "nit"] },
     "sendPasswordRecoveryEmail": { "verb": "POST", "url": "/api/v1/entrance/send-password-recovery-email", "args": ["correo"] },
     "updatePasswordAndLogin": { "verb": "POST", "url": "/api/v1/entrance/update-password-and-login", "args": ["password", "token"] },
     "deliverContactFormMessage": { "verb": "POST", "url": "/api/v1/deliver-contact-form-message", "args": ["correo", "topic", "nombre", "message"] }
