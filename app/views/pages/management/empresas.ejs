@@ -1,18 +1,22 @@
 <div id="listaempresas" v-cloak>
   <ajax-form action="listaempresas" :syncing.sync="syncing">
-    <fieldset>
-      <h2>Empresas</h2>
-      <ul class="collection with-header" style="list-style: none;">
-        <li v-for="item in formData.empresas">
-          <i class="material-icons work"></i>
-          <a :href="'/anexos?nit='+item.nit" class="secondary-content">
-            <div class="alert" v-bind:class="obtenerClass(item)" role="alert">
-              <i class="fas fa-building" style="color:black"></i>&nbsp;{{ item.nombre }} - NIT {{ item.nit }}
-            </div>
-          </a>
-        </li>
-      </ul>
-    </fieldset>
+    <br>
+      <h1 class = "text-center">Empresas</h1>
+      <h5 class = "text-center">A continuación se muestran las empresas que son clientes 
+      tuyos. Puedes entrar a visualizar y modificar la documentación que llevan para
+      cada anexo!</h5> <br>
+      <div class="container" style="width: 100%">
+        <ul class="collection with-header" style="list-style: none;">
+          <li v-for="item in formData.empresas">
+            <i class="material-icons work"></i>
+            <a :href="'/anexos?nit='+item.nit" class="secondary-content">
+              <div class="alert" v-bind:class="obtenerClass(item)" role="alert">
+                <i class="fas fa-building" style="color:black"></i>&nbsp;{{ item.nombre }} - NIT {{ item.nit }}
+              </div>
+            </a>
+          </li>
+        </ul>
+    </div>
   </ajax-form>
 </div>
 

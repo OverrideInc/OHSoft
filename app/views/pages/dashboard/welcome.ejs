@@ -6,6 +6,7 @@
     referente al SG-SST de tu empresa de forma fácil, rápida y segura.</p>
 
     <div class="card-columns">
+    <% if(!me.esSuperAdmin){ %> 
     <div class="card" style="width: 15rem;">
       <img class="card-img-top" src="images/documentation.png" style="width:100%" >
       <div class="card-body">
@@ -15,11 +16,21 @@
         <a href="/anexos" class="btn btn-secondary">Ir a anexos</a>
       </div>
     </div>
-
+    <% } else { %>
+    <div class="card" style="width: 15rem;">
+      <img class="card-img-top" src="images/enterprise.png" style="width:100%" >
+      <div class="card-body">
+        <h5 class="card-title">Administrar documentación Empresas</h5>
+        <p class="card-text">Dirigete a la ventana de administración de los anexos del
+        SG-SST de tus empresas cliente.</p>
+        <a href="/empresas" class="btn btn-secondary">Ir a anexos</a>
+      </div>
+    </div>
+    </a><% } %>
     <div class="card" style="width: 15rem;">
       <img class="card-img-top" src="images/profile.png" style="width:100%" >
       <div class="card-body">
-        <h5 class="card-title">Administrar documentación</h5>
+        <h5 class="card-title">Administrar perfil</h5>
         <p class="card-text">Administra la información de tu empresa</p>
         <a href="/account/profile" class="btn btn-secondary">Ir a perfil</a>
       </div>
