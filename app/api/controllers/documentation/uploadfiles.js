@@ -50,20 +50,36 @@ module.exports = {
 
 	fn: async function (inputs, exits, req) {
 		
-		var dir = `assets/documents/${inputs.nit}`;
+		var dir = `assets`;
+		console.log('here');
 
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 
-		dir += `/${inputs.anexo}`;
+		dir += `/documents`;
+		console.log('tugfa');
 
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir);
+		}
+		dir += `/${inputs.nit}`
+
+		console.log('x2 xd');
+
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir);
+		}
+
+		console.log('here to');
+		dir += `/${inputs.anexo}`;
+		console.log('here tird');
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 
 		var nombre = inputs.nombre + '.' + inputs.name.split('.')[1]
-
+		console.log('here for');
 		dir += `/${nombre}`;
 
 		console.log(dir);
