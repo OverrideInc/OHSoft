@@ -1,13 +1,18 @@
 package co.edu.uniquindio.negocio;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import co.edu.uniquindio.dto.AnexosDocumentosDTO;
+import co.edu.uniquindio.dto.DocumentosAnexosDTO;
 import co.edu.uniquindio.entidades.Anexos;
+import co.edu.uniquindio.entidades.Documentos;
 
 /**
  * 
@@ -19,6 +24,9 @@ public class AnexosEJB {
 	//Manjeador de la persistencia (mysql).
 	@PersistenceContext(name = "persistencia")
 	protected transient EntityManager em;
+	
+	@EJB
+	private DocumentosEJB dejb;
 	
 	/**
 	 * buscar el anexo por si identificador si esta en la persistencia.
@@ -52,4 +60,26 @@ public class AnexosEJB {
 		List<Anexos> result = q.getResultList();
 		return result;
 	}
+	
+	public List<AnexosDocumentosDTO> listarPorAnexo(){
+		List<AnexosDocumentosDTO> respuesta = new ArrayList<>();
+		Query w = em.createNamedQuery(Anexos.LISTAR_ANEXOS);
+		List<Anexos>anexos = w.getResultList();
+		for(Anexos a: anexos){
+			AnexosDocumentosDTO dto = new AnexosDocumentosDTO();
+			dto.setIdAnexos(a.getIdAnexos());
+			dto.setNombre(a.getNombre());
+			dto.setDescripcion(a.getDescripcion());
+			List<Documentos> docs = dejb.listarDocumentosPorAnexo(a.getIdAnexos());
+			List<DocumentosAnexosDTO> documentos=new ArrayList<DocumentosAnexosDTO>();
+			for(Documentos doc : docs){
+				DocumentosAnexosDTO nuevo = new DocumentosAnexosDTO(doc.getIdDocumento(),doc.getNombre(),doc.getPeso());
+				documentos.add(nuevo);
+			}
+			dto.setDocumentos(documentos);
+			respuesta.add(dto);
+		}
+		return respuesta;
+	}
+	
 }

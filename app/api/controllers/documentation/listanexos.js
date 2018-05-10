@@ -15,18 +15,20 @@ module.exports = {
 
 
     fn: async function (inputs, exits) {
-        const anexoNombre = this.req.query['anexo']
-        var rc = await User.findOne({
-            id: this.req.session.userId,
-        });
+        const anexoNombre = this.req.query['anexo'];
+        const nit = this.req.query['nit'];
+
+        //var rc = await User.findOne({
+        //    id: this.req.session.userId,
+        //});
 
         var listAnexos = [];
-        const dir = `assets/documents/${rc.nit}/${anexoNombre}`;
-
+        const dir = `assets/documents/${nit}/${anexoNombre}`;
+        console.log('path = ' + dir);
         if (fs.existsSync(dir)) {
             fs.readdirSync(dir).forEach(file => {
                 listAnexos.push({
-                    url: `/documents/${rc.nit}/${anexoNombre}/${file}`,
+                    url: `/documents/${nit}/${anexoNombre}/${file}`,
                     descripcion: file
                 });
             });
@@ -70,7 +72,6 @@ module.exports = {
 
         _anexos.forEach((anexo) =>{
             if(anexo.id == anexoNombre){
-                console.log('reached');
                 _docs = anexo.documentos;
             }
         })

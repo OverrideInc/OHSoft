@@ -13,7 +13,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
 
+import co.edu.uniquindio.dto.AnexosDocumentosDTO;
 import co.edu.uniquindio.entidades.Anexos;
+import co.edu.uniquindio.entidades.Documentos;
 import co.edu.uniquindio.negocio.AnexosEJB;
 import co.edu.uniquindio.negocio.DocumentosEJB;
 
@@ -31,47 +33,15 @@ public class AnexosServices {
 	private DocumentosEJB dejb;
 	
 	/**
-	 * Servicio registrar ciudad.
-	 * @param ciudad, ciudad a probar.
-	 * @return, retorna  ok si se agrego una 
-	 * precondicion si fallo.
-	 */
-	@POST
-	@Path("/registrar")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response registrarAnexo(Anexos anexo) {
-		return 	nejb.agregarAnexo(anexo)? 
-				Response.ok().build() : 
-				Response.status(Response.Status.PRECONDITION_FAILED).build();
-	}
-	/**
-	 * Servicio  para buscar ciudad.
-	 * @param idCiudad, identificador para buscar ciudad.
-	 * @return, retorna la ciudad buscada.
-	 */
-	@GET
-	@Path("/buscar/{anexo}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscarCiudad(@PathParam("anexo") int idAnexo) {
-		Anexos c = nejb.buscarAnexo(idAnexo);
-		return c == null ? Response.noContent().build() : 
-			Response.ok(c).build();
-	}
-	
-	/**
-	 * Servicio para listar la ciudades.
+	 * Servicio para listar la anexos con documentos.
 	 * @return, retorna la lista de las ciudades.
 	 */
 	@GET
-	@Path("/listar")
+	@Path("/listaranexos")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response listarAnexos() {
-		List<Anexos> c = nejb.listarAnexo();
-		for(Anexos a : c){
-			
-		}
-		return c == null ? Response.noContent().build() : 
-			Response.ok(c).build();
+	public Response listarPorDocumentos() {
+		List<AnexosDocumentosDTO> anexos = nejb.listarPorAnexo();
+		return anexos == null ? Response.noContent().build() : 
+			Response.ok(anexos).build();
 	}
 }

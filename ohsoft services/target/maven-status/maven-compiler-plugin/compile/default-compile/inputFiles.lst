@@ -2,12 +2,14 @@ C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\TelefonoServices.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Documentos.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\CiudadEJB.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\dto\DocumentosAnexosDTO.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\AnexosEJB.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\EmpresaServices.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\uniquindio\config\CORSResponseFilter.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\package-info.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Anexos.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\AnexosServices.java
+C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\dto\AnexosDocumentosDTO.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\CiudadServices.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Ciudad.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\DocumentosEJB.java
@@ -16,4 +18,3 @@ C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\negocio\TelefonoEJB.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Empresa.java
 C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\entidades\Telefono.java
-C:\Users\Juan Jose Ramirez\Documents\GitHub\OHSoft\ohsoft services\src\main\java\co\edu\uniquindio\services\DocumentosServices.java

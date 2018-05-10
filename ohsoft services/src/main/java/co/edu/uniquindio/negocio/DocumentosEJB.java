@@ -6,8 +6,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-
 import co.edu.uniquindio.entidades.Documentos;
 /**
  * 
@@ -54,10 +52,17 @@ public class DocumentosEJB {
 		return result;
 	}
 	
-	public List<Documentos> listarPorAnexo(int idAnexo){
+	
+	/**
+	 * enlista los documentos que hay en la persistencia.
+	 * @return, retorna la lista de la persistencia.
+	 */
+	public List<Documentos> listarDocumentosPorAnexo(int idAnexo){
 		Query q = em.createNamedQuery(Documentos.LISTAR_PORANEXO);
-		q.setParameter(2, idAnexo);
+		q.setParameter(1, idAnexo);
 		List<Documentos> result = q.getResultList();
 		return result;
 	}
+	
+	
 }
