@@ -38,10 +38,16 @@ parasails.registerPage('listaanexos', {
     },
     methods: {
         obtenerClass(item) {
-            if (item.cantidadAnexos > 2)
-                return 'alert-danger';
 
-            return 'alert-dark';
+            if (item.cantidadAnexos < 2){
+                return 'alert-danger';
+            }
+
+            if(item.cantidadAnexos < 3){
+                return 'alert-warning';
+            }
+
+            return 'alert-success';
         }
     }
 });

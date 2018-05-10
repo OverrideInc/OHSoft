@@ -22,6 +22,11 @@ module.exports = {
         //    id: this.req.session.userId,
         //});
 
+
+          var userRecord = await User.findOne({
+            id: this.req.session.userId
+         });
+
         var listAnexos = [];
         const dir = `assets/documents/${nit}/${anexoNombre}`;
         console.log('path = ' + dir);
@@ -81,7 +86,8 @@ module.exports = {
             descripcion: 'Aca hay que buscar la descripción',
             documentos: listAnexos,
             cantidadMaxima: cantidadMaxima,
-            docs : _docs
+            docs : _docs,
+            nit : userRecord.nit
         }
 
         console.log(objRetorno.docs);

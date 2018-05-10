@@ -1,18 +1,21 @@
 <div id="listaanexos" v-cloak>
-  <ajax-form action="listaanexos" :syncing.sync="syncing">
-    <fieldset>
-      <h2>Anexos</h2>
-      <ul class="collection with-header" style="list-style: none;">
+    <ajax-form action="listaanexos" :syncing.sync="syncing">
+      <br>
+      <h1 class = "text-center">Anexos</h1>
+      <h5 class = "text-center">A continuación se muestra la estructura de carpetas que
+      maneja la aplicación. Los anexos contienen cada uno de los documentos exigidos por la 
+      ley 1072.</h5> <br>
+      <div class="container" style="width: 100%">
+        <ul class="collection with-header" style="list-style: none;">
         <li v-for="item in formData.anexos">
-          <i class="material-icons orange"></i>
-          <a :href="'/anexos/anexo?anexo=' + item.id + '&nit=' + formData.nit" class="secondary-content">
+          <a :href="'/anexos/anexo?anexo=' + item.id + '&nit=' + formData.nit" class="secondary-content" style="width:100%">
             <div class="alert" v-bind:class="obtenerClass(item)" role="alert">
               <i class="fas fa-folder" style="color:black">folder</i>&nbsp;{{ item.nombre }} - Cantidad {{ item.cantidadAnexos }}
             </div>
           </a>
         </li>
       </ul>
-    </fieldset>
+      </div>
   </ajax-form>
 </div>
 

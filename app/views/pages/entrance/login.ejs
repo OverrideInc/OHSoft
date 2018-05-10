@@ -1,6 +1,12 @@
 <div id="login" v-cloak>
   <div class="container">
-    <h1 class="text-center">Iniciar sesión</h1>
+    <h1 class="text-center" style="color:Gray">
+      <i class="fas fa-lock fa-2x"></i>
+     <i class="fas fa-key fa-2x"></i>
+    </h1>
+    <h1 class="text-center">
+    Iniciar sesión
+  </h1>
     <div class="login-form-container">
       <hr/>
       <ajax-form action="login" :syncing.sync="syncing" :cloud-error.sync="cloudError" :form-data="formData" :form-rules="formRules" :form-errors.sync="formErrors" @submitted="submittedForm()">
@@ -19,10 +25,12 @@
         <p class="text-danger" v-if="cloudError==='badCombo'"><small>The credentials you entered are not associated with an account. Please check your email and/or password and try again.</small></p>
         <p class="text-danger" v-else-if="cloudError"><small>Ha ocurrido un error. Por favor verifique sus datos o <a href="/contact">contacte nuestro soporte</a> si el error persiste.</small></p>
         <div class="form-group">
-          <ajax-button :syncing="syncing" class="btn-dark btn-lg btn-block">Iniciar sesión</ajax-button>
+          <ajax-button :syncing="syncing" class="btn-dark btn-lg btn-block">
+            <i class="fas fa-sign-in-alt"></i>  Iniciar sesión
+          </ajax-button>
         </div>
       </ajax-form>
-      <p class="text-center"><a href="/password/forgot">¿Ha olvidado la contraseña?</a></p>
+      <!--p class="text-center"><a href="/password/forgot">¿Ha olvidado la contraseña?</a></p-->
     </div>
   </div>
 </div>
