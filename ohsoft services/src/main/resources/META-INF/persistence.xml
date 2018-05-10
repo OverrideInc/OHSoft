@@ -5,5 +5,8 @@
 		<class>co.edu.uniquindio.entidades.Documentos</class>
 		<class>co.edu.uniquindio.entidades.Anexos</class>				
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.schema-generation.create-database-schemas" value="false"/>
+		</properties>
 	</persistence-unit>
 </persistence>

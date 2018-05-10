@@ -37,8 +37,7 @@ private int idAnexos;
 private String nombre;
 @Column(name = "descripcion", length = 250, nullable = false)
 private String descripcion;
-@OneToMany(mappedBy= "anexos")
-private List<Documentos> documentos;
+
 
 /**
  * construtor
@@ -46,12 +45,12 @@ private List<Documentos> documentos;
  * @param nombre
  * @param descripcion
  */
-public Anexos(int idAnexos, String nombre, String descripcion,List<Documentos>documentos) {
+public Anexos(int idAnexos, String nombre, String descripcion) {
 	super();
 	this.idAnexos = idAnexos;
 	this.nombre = nombre;
 	this.descripcion = descripcion;
-	this.documentos=documentos;
+	
 	
 }
 
@@ -82,15 +81,5 @@ public String getDescripcion() {
 public void setDescripcion(String descripcion) {
 	this.descripcion = descripcion;
 }
-
-public List<Documentos> getDocumentos() {
-	return documentos;
-}
-
-public void setDocumentos(List<Documentos> documentos) {
-	this.documentos = documentos;
-}
-
-
 
 }

@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NamedQueries({
 @NamedQuery(name=Documentos.BUSCAR_DOCUMENTO,query="select c from Documentos c where c.idDocumento = ?1 "),
 @NamedQuery(name=Documentos.LISTAR_DOCUMENTOS,query="select c from Documentos c"),
-@NamedQuery(name=Documentos.LISTAR_PORANEXO,query="select c from Documentos c where c.anexos.idAnexos = ?2")}
+@NamedQuery(name=Documentos.LISTAR_PORANEXO,query="select d from Documentos d where d.anexos.idAnexos = ?1")}
 )
 public class Documentos implements Serializable {
 	
