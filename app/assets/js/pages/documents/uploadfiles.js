@@ -9,7 +9,8 @@ parasails.registerPage('uploadfiles', {
             anexo:'', 
             name:''
         },
-        formErrors: {},
+        formErrors: {
+        },
         syncing: false,
         cloudError: '',
         cloudSuccess: false,
@@ -36,6 +37,7 @@ parasails.registerPage('uploadfiles', {
                 _this.formData.descripcionAnexo = peticion.response.descripcion;
                 _this.formData.documents = peticion.response.documentos;
                 _this.formData.lista = peticion.response.docs;
+                _this.nombre = peticion.response.docs[0];
             }
         };
         peticion.open("GET", `/api/v1/documentation/listanexos?anexo=${anexoNombre}&nit=${nit}`, true);
@@ -58,6 +60,17 @@ parasails.registerPage('uploadfiles', {
         handleParsingForm: function () {
             this.formErrors = {};
             var argins = this.formData;
+            var argins = this.formData;
+
+            // Validate full name:
+            if (!argins.nombre) {
+                this.formErrors.nombre = true;
+            }
+
+            if (Object.keys(this.formErrors).length > 0) {
+                 return;
+            }
+            
             return argins;
         },
         getBase64: function (file) {

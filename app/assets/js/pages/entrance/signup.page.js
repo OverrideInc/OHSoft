@@ -67,7 +67,7 @@ parasails.registerPage('signup', {
       }
 
       // Validate password:
-      if (!argins.password) {
+      if (!argins.password || !parasails.util.isValidPassword(argins.password)) {
         this.formErrors.password = true;
       }
 
