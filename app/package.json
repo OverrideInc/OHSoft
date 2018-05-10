@@ -12,6 +12,7 @@
     "async": "2.0.1",
     "atob": "^2.1.0",
     "lodash": "^4.17.5",
+    "mocha": "^5.1.1",
     "sails": "^1.0.1",
     "sails-hook-apianalytics": "^2.0.0",
     "sails-hook-organics": "^0.13.0",

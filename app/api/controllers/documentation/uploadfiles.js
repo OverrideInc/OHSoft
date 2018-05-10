@@ -11,10 +11,6 @@ module.exports = {
 
 
 	inputs: {
-		name: {
-			required: true,
-			type: 'string',
-		},
 
 		file: {
 			require: true,
@@ -26,8 +22,13 @@ module.exports = {
 			type: 'string'
 		},
 
-		name: {
+		nombre: {
 			required: true,
+			type: 'string',
+		},
+
+		nit: {
+			required : true,
 			type: 'string',
 		}
 	},
@@ -50,11 +51,10 @@ module.exports = {
 
 
 	fn: async function (inputs, exits, req) {
-		var rc = await User.findOne({
-			id: this.req.session.userId,
-		});
-		var dir = `assets/documents/${rc.nit}`;
+		
+		var dir = `assets/documents/${inputs.nit}`;
 		// var dir = 'assets/documents/' + rc.nit;
+		console.log(dir);
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
@@ -65,18 +65,8 @@ module.exports = {
 			fs.mkdirSync(dir);
 		}
 		// var select = document.getElementById("page-wrap");
-		function h(){
-		var select = document.getElementById("documentoz");
-		var seleccted;
-		select.addEventListener('change',
-  		function(){
-    		var selectedOption = this.options[select.selectedIndex];
-    		seleccted=selectedOption.value;
- 		 });
-		return seleccted;
-		}
 
-		fs.writeFile(dir + '/' + inputs.name, inputs.file.split(',')[1], 'base64', function (err) {
+		fs.writeFile(dir + '/' + inputs.nombre, inputs.file.split(',')[1], 'base64', function (err) {
 			if (err) throw err;
 			console.log('done');
 		});

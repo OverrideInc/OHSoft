@@ -5,19 +5,17 @@
 			<p class="text">Aquí debe ir la descripción del anexo</p>
 			<hr/>
 
-
-	<fieldset>
-		<select  v-model="formData.selected">
-			<option v-for="item in formData.lista">{{ item .nombre}}</option>
-		</select>
-		<hr>
-    </fieldset>
+			<fieldset>
+				<select  v-model="formData.selected">
+					<option v-for="item in formData.lista">{{ item .nombre}}</option>
+				</select>
+				<hr>
+   			 </fieldset>
 
 			<ajax-form action="uploadfiles" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
 				<div class="form-group">
 					<label for="full-name">Archivo</label>
-					<input class="form-control" id="full-name" type="file" :disabled="formData.documents.length >= formData.cantidadMaxima" @change="previewFiles" ref="myFiles" placeholder="OverrideSA" accept=".docx,.pdf,.xlsx,image/*" focus-first>
-					<input class="text" value="formData.selected"> 
+					<input class="form-control" id="full-name" type="file"@change="previewFiles" ref="myFiles" placeholder="OverrideSA" accept=".docx,.pdf,.xlsx,image/*" focus-first>
 					<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
 						<i class="fas fa-arrow-alt-circle-up"></i> Subir archivo
 					</ajax-button>
@@ -28,6 +26,7 @@
 					</li>
 				</ul>
 			</ajax-form>
+
 		</div>
 	</div>
 </div>
