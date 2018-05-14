@@ -18,18 +18,15 @@ module.exports = {
         const anexoNombre = this.req.query['anexo'];
         const nit = this.req.query['nit'];
 
-        //var rc = await User.findOne({
-        //    id: this.req.session.userId,
-        //});
 
-
-          var userRecord = await User.findOne({
+        var userRecord = await User.findOne({
             id: this.req.session.userId
-         });
+        });
 
         var listAnexos = [];
         const dir = `assets/documents/${nit}/${anexoNombre}`;
         console.log('path = ' + dir);
+
         if (fs.existsSync(dir)) {
             fs.readdirSync(dir).forEach(file => {
                 listAnexos.push({
@@ -37,13 +34,6 @@ module.exports = {
                     descripcion: file
                 });
             });
-        }
-
-        let cantidadMaxima = 4;
-
-        /*Logica de cantidad por anexo*/
-        if (anexoNombre === 'anexo_0') {
-            cantidadMaxima = 3;
         }
 
         var _anexos= [
@@ -85,7 +75,6 @@ module.exports = {
             nombre: anexoNombre,
             descripcion: 'Aca hay que buscar la descripción',
             documentos: listAnexos,
-            cantidadMaxima: cantidadMaxima,
             docs : _docs,
             nit : userRecord.nit
         }

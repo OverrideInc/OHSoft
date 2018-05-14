@@ -10,7 +10,10 @@
         <li v-for="item in formData.anexos">
           <a :href="'/anexos/anexo?anexo=' + item.id + '&nit=' + formData.nit" class="secondary-content" style="width:100%">
             <div class="alert" v-bind:class="obtenerClass(item)" role="alert">
-              <i class="fas fa-folder" style="color:black">folder</i>&nbsp;{{ item.nombre }} - Cantidad {{ item.cantidadAnexos }}
+              <i class="fas fa-folder" style="color:black">folder</i>&nbsp;{{ item.nombre }}&nbsp;
+              <div class="d-flex flex-row-reverse">
+                Avance: {{ item.doc_count }}/{{ item.documentos.length }}
+              </div> 
             </div>
           </a>
         </li>

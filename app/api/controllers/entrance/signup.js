@@ -66,11 +66,6 @@ the account verification message.)`,
       description: 'The provided email address is already in use.',
     },
 
-    unsecurePassword: {
-      statusCode: 409,
-      description: 'The password isn\'t secure enough'
-    },
-
   },
 
 
@@ -78,8 +73,7 @@ the account verification message.)`,
 
     var newEmailAddress = inputs.correo.toLowerCase();
 
-    // Build up data for the new user record and save it to the database.
-    // (Also use `fetch` to retrieve the new ID so that we can use it below.)
+
     var newUserRecord = await User.create(Object.assign({
      correo: newEmailAddress,
       password: await sails.helpers.passwords.hashPassword(inputs.password),
@@ -127,8 +121,7 @@ the account verification message.)`,
     post_req.end();
     */
 
-    // If billing feaures are enabled, save a new customer entry in the Stripe API.
-    // Then persist the Stripe customer id in the database.
+
     if (sails.config.custom.enableBillingFeatures) {
       let stripeCustomerId = await sails.helpers.stripe.saveBillingInfo.with({
         correo: newEmailAddress
@@ -156,7 +149,6 @@ the account verification message.)`,
       sails.log.info('Skipping new account email verification... (since `verifyEmailAddresses` is disabled)');
     }
 
-    // Since everything went ok, send our 200 response.
     return exits.success();
 
   }

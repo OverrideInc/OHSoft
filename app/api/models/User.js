@@ -41,6 +41,7 @@ module.exports = {
     nit: {
       type: 'string',
       required: true,
+      unique: true,
       description: 'The enterprise\'s NIT',
       maxLength: 30,
       example: '123.456.789 - 0'

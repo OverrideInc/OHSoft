@@ -2,8 +2,6 @@ parasails.registerPage('listaanexos', {
     data: {
         formData: {
             anexos: [],
-            documents: [],
-            query_pars : [], 
             nit : ''
         },
         formErrors: {},
@@ -30,7 +28,7 @@ parasails.registerPage('listaanexos', {
                     }
                 }
             };
-            peticion.open("GET", `/getAnexos`, true);
+            peticion.open("GET", `/getAnexos?nit=${_nit}`, true);
             peticion.send();
         
     },
@@ -39,11 +37,24 @@ parasails.registerPage('listaanexos', {
     methods: {
         obtenerClass(item) {
 
-            if (item.cantidadAnexos < 2){
+            var cant;
+
+            if(item.documentos.length == 0){
+                cant = 1;
+            }
+
+            else{
+                cant = item.documentos.length;
+            }
+
+            var idx = (item.doc_count / cant);
+
+
+            if (idx < 0.5){
                 return 'alert-danger';
             }
 
-            if(item.cantidadAnexos < 3){
+            if(idx < 1){
                 return 'alert-warning';
             }
 
