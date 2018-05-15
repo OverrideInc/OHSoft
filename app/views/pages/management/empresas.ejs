@@ -8,12 +8,14 @@
       <div class="container" style="width: 100%">
         <ul class="collection with-header" style="list-style: none;">
           <li v-for="item in formData.empresas">
-            <i class="material-icons work"></i>
-            <a :href="'/anexos?nit='+item.nit" class="secondary-content">
-              <div class="alert" v-bind:class="obtenerClass(item)" role="alert">
-                <i class="fas fa-building" style="color:black"></i>&nbsp;{{ item.nombre }} - NIT {{ item.nit }}
-              </div>
-            </a>
+            <div class="d-flex justify-content-between">
+              <a :href="'/anexos?nit='+item.nit" class="alert" v-bind:class="obtenerClass(item)" role="alert" style="width: 80%">
+                <i class="fas fa-building" style="color:black"></i>&nbsp;{{ item.nombre }} - NIT {{ item.nit }} 
+              </a>
+              <a :href="'/account?nit='+item.nit" class="alert" v-bind:class="getStatus(item)" role="alert">
+                 Estado: {{item.activado ? 'Activado' : 'Desactivado'}}
+              </a>
+            </div>
           </li>
         </ul>
     </div>

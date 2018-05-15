@@ -7,42 +7,58 @@
         <h4>Información</h4>
       </div>
       <div class="col-sm-6">
-        <span class="float-sm-right">
-          <a class="btn btn-sm btn-outline-secondary account-settings-button" href="/account/profile">Editar perfil</a>
-        </span>
+          <span class="float-sm-right" v-if="me.nit==formData.nit">
+              <a class="btn btn-sm btn-outline-secondary account-settings-button" href="/account/profile">Editar perfil</a>
+            </a>
+          </span>
       </div>
     </div>
     <div class="row">
       <div class="col-3">NIT:</div>
-      <div class="col"><strong>{{me.nit}}</strong></div>
+      <div class="col"><strong>{{formData.nit}}</strong></div>
     </div>
     <div class="row">
       <div class="col-3">Nombre:</div>
-      <div class="col"><strong>{{me.nombre}}</strong></div>
+      <div class="col"><strong>{{formData.nombre}}</strong></div>
     </div>
     <div class="row">
       <div class="col-3">Correo electrónico:</div>
       <div class="col">
-        <strong :class="[me.emailStatus === 'unconfirmed' || me.emailStatus === 'changeRequested' ? 'text-muted' : '']">{{me.emailChangeCandidate ? me.emailChangeCandidate : me.correo}}</strong>
+        <strong :class="[me.emailStatus === 'unconfirmed' || me.emailStatus === 'changeRequested' ? 'text-muted' : '']">{{formData.correo}}</strong>
         <span v-if="me.emailStatus === 'unconfirmed' || me.emailStatus === 'changeRequested'" class="badge badge-pill badge-warning">Unverified</span>
       </div>
     </div>
     <hr/>
-    <div class="row mb-3">
+    <div class="row mb-3" v-if="me.nit==formData.nit">
       <div class="col-sm-6">
         <h4>Contraseña</h4>
       </div>
       <div class="col-sm-6">
-        <span class="float-sm-right">
-          <a class="btn btn-sm btn-outline-secondary account-settings-button" href="/account/password">Cambiar contraseña</a>
-        </span>
+          <span class="float-sm-right">
+            <a class="btn btn-sm btn-outline-secondary account-settings-button" href="/account/password">Cambiar contraseña</a>
+          </span>
+        </a>
       </div>
     </div>
-    <div class="row">
+    <div class="row" v-if="me.nit==formData.nit">
       <div class="col-3">Contraseña:</div>
       <div class="col"><strong>••••••••••</strong></div>
     </div>
-    <hr/>
+    <div class="row mb-3" v-if="me.esSuperAdmin && me.nit != formData.nit">
+      <div class="col-sm-2">
+        <h4>Estado: </h4>
+      </div>
+      <div class="col-sm-2">
+        <div class="text" v-bind:class="getTextStatus()"> {{formData.activado ? 'Activada' : 'Desactivada'}} </div>
+      </div>
+      <div class="col-sm-2">
+        <ajax-form action="activate" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+          <span class="float-sm-right">
+            <ajax-button type="submit" :syncing="syncing" class="btn" v-bind:class="getStatus()">{{formData.activado ? 'Desactivar' : 'Activar'}}</ajax-button>
+          </span>
+        </ajax-form>
+      </div>
+    </div>
     <div class="row mb-3" v-if="isBillingEnabled">
       <div class="col-sm-6">
         <h4>Billing</h4>

@@ -17,11 +17,7 @@ module.exports = {
       responseType: 'redirect',
       description: 'El usuario no está logeado'
     },
-
-    addParam: {
-      responseType: 'ok',
-      viewTemplatePath: 'pages/documentation/anexos'
-    }
+    
   },
 
 
@@ -29,6 +25,10 @@ module.exports = {
 
     if (!this.req.me) {
       throw {redirect:'/login'};
+    }
+
+    if (!this.req.me.activado) {
+      throw {redirect:'/welcome'};
     }
 
     const nit = this.req.query['nit'];

@@ -1,12 +1,19 @@
 <div id="welcome">
   <div class="container">
+    <% if(!me.activado){ %>
+      <div class="alert alert-warning">
+        <h4 class="alert-heading"> Tu cuenta aún no ha sido verificada!</h4>
+        <p> Para que puedas hacer uso de las funcionalidades de la aplicación, el personal de
+          <strong>Clan de ingeniería</strong> debe verificar que tu cuenta hace parte de sus empresas cliente. Ten paciencia para la verificación o <a href="/contact">contactanos</a> si crees que hay algún error.</p>
+      </div>
+      <hr/>
+    <% } %>
     <h1>¡Bienvenido!</h1>
     <hr/>
     <p>Ahora estás dentro de la aplicación. Aquí, podrás administrar la documentación 
     referente al SG-SST de tu empresa de forma fácil, rápida y segura.</p>
-
     <div class="card-columns">
-    <% if(!me.esSuperAdmin){ %> 
+    <% if(!me.esSuperAdmin && me.activado){ %> 
     <div class="card" style="width: 15rem;">
       <img class="card-img-top" src="images/documentation.png" style="width:100%" >
       <div class="card-body">
@@ -16,7 +23,7 @@
         <a href="/anexos" class="btn btn-secondary">Ir a anexos</a>
       </div>
     </div>
-    <% } else { %>
+    <% } else if(me.esSuperAdmin){ %>
     <div class="card" style="width: 15rem;">
       <img class="card-img-top" src="images/enterprise.png" style="width:100%" >
       <div class="card-body">

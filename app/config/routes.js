@@ -19,6 +19,7 @@ module.exports.routes = {
   'GET /anexos': { action: 'documentation/view-anexos', skipAssets : true },
   'GET /empresas': { action: 'management/view-empresas' },
   'GET /gempresas': { action: 'management/get-empresas' },
+  'GET /get-empresa': { action: 'management/get-empresa' },
   'GET /getAnexos': { action: 'documentation/get-anexos' },
   'GET /anexos/anexo': { action: 'documentation/view-anexo' },
 
@@ -57,6 +58,7 @@ module.exports.routes = {
   'POST  /api/v1/entrance/update-password-and-login': { action: 'entrance/update-password-and-login' },
   'POST  /api/v1/deliver-contact-form-message': { action: 'deliver-contact-form-message' },
   'POST  /api/v1/documentation/uploadfiles': { action: 'documentation/uploadfiles' },
+  'POST /api/v1/management/activate-account': { action: 'management/activate-account' },
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗

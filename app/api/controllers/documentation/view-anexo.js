@@ -25,6 +25,11 @@ module.exports = {
     if (!this.req.me) {
       throw {redirect:'/login'};
     }
+
+    if(!this.req.me.activado){
+      throw {redirect:'/welcome'};
+    }
+    
     // Respond with view.
     return exits.success();
 

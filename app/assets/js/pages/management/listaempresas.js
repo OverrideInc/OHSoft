@@ -27,6 +27,14 @@ parasails.registerPage('listaempresas', {
     methods: {
         obtenerClass(item) {
             return 'alert-dark';
+        },
+
+        getStatus(item) {
+            if(item.activado){
+                return 'alert-success';
+            }
+
+            return 'alert-danger';
         }
     }
 });

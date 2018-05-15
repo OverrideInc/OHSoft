@@ -13,7 +13,12 @@ parasails.registerPage('account-overview', {
     syncingRemoveCard: false,
 
     // Form data
-    formData: { /* … */ },
+    formData: { 
+      nombre : '',
+      nit : '',
+      correo : '', 
+      activado : false
+    },
 
     // Server error state for the form
     cloudError: '',
@@ -31,6 +36,35 @@ parasails.registerPage('account-overview', {
   beforeMount: function (){
     _.extend(this, window.SAILS_LOCALS);
 
+    this.formData.nit = decodeURIComponent(
+        window.location.search.replace(
+          new RegExp("^(?:.*[&\\?]" 
+          + encodeURIComponent('nit').replace(/[\.\+\*]/g, "\\$&") 
+          + "(?:\\=([^&]*))?)?.*$", "i"), "$1"
+      ));
+
+    if(!this.formData.nit){
+      this.formData.nombre = this.me.nombre;
+      this.formData.nit = this.me.nit;
+      this.formData.correo = this.me.correo;
+    }
+
+    else{
+      var peticion = new XMLHttpRequest();
+      var _this = this;
+      peticion.responseType = 'json';
+      peticion.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          _this.formData.nombre=peticion.response.empresa.nombre;
+          _this.formData.correo=peticion.response.empresa.correo;
+          _this.formData.activado=peticion.response.empresa.activado;
+        }
+      };
+      peticion.open("GET", `/get-empresa?nit=${_this.formData.nit}`, true);
+      peticion.send();
+    }
+
+    console.log(this.formData.nit + ' ' + this.formData.nombre);
     this.isBillingEnabled = !!this.stripePublishableKey;
 
     // Determine whether there is billing info for this user.
@@ -109,6 +143,11 @@ parasails.registerPage('account-overview', {
 
     },
 
+    submittedForm: async function () {
+        alert('Se actualizó la información correctamente');
+        window.location.reload();
+    },
+
     handleParsingRemoveCardForm: function() {
       return {
         // Set to empty string to indicate the default payment source
@@ -117,5 +156,26 @@ parasails.registerPage('account-overview', {
       };
     },
 
+    handleParsingForm: function () {
+      this.formErrors = {};
+      var argins = this.formData;
+      return argins;
+    },
+
+    getStatus(){
+      if(this.formData.activado){
+        return 'btn-sm btn-outline-danger';
+      }
+
+      return 'btn-sm btn-outline-success'
+    },
+
+    getTextStatus(){
+      if(this.formData.activado){
+        return 'text-success';
+      }
+
+      return 'text-danger';
+    }
   }
 });

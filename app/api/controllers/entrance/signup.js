@@ -80,6 +80,7 @@ the account verification message.)`,
       nombre: inputs.nombre,
       nit: inputs.nit,
       esSuperAdmin: false,
+      activado : false,
       tosAcceptedByIp: this.req.ip
     }, sails.config.custom.verifyEmailAddresses? {
       emailProofToken: await sails.helpers.strings.random('url-friendly'),
