@@ -1,9 +1,9 @@
 <div id="uploadfiles" v-cloak>
 	<div class="container" v-if="!cloudSuccess">
 		<br>
-		<h1 class="text">{{ formData.nombreAnexo }}: {{ formData.descripcionAnexo }}</h1>
+		<h1 class="text">{{ formData.nombreAnexo }}</h1>
 		<div class="signup-form">
-			<p class="text">Aquí debe ir la descripción detallada del anexo</p>
+			<p class="text">{{ formData.descripcionAnexo }}</p>
 			<hr/>
 
 			<fieldset>
@@ -19,9 +19,9 @@
 				<div class="form-group">
 					<label for="archivo">Archivo</label>
 					<input class="form-control" id="archivo" type="file"@change="previewFiles" ref="myFiles" accept=".docx,.pdf,.xlsx,image/*" focus-first>
-
+					<p class="text-danger" v-if="cloudError"><small>Por favor, seleccione un archivo para subir.</small></p>
 					<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
-						<i class="fas fa-arrow-alt-circle-up"></i> Subir archivo
+						<div><i class="fas fa-arrow-alt-circle-up"></i> Subir archivo </div>
 					</ajax-button>
 				</div>
 
