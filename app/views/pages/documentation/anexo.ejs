@@ -11,7 +11,7 @@
 				<select class="form-control" id = "nombreS" :class="[formData.nombre ? '' : 'is-invalid']" v-model="formData.nombre">
 					<option v-for="item in formData.lista">{{ item.nombre}}</option>
 				</select>
-				<div class="invalid-feedback" v-if="formErrors.password">Por favor ingrese una contraseña válida. La contraseña debe tener al menos una longitud de ocho (8) caracteres entre letras mayúsculas, letras minúscula y números.</div>
+				<div class="invalid-feedback" v-if="formErrors.nombre">Por favor seleccione qué documento de la lista está por subir.</div>
 				<hr>
    			 </fieldset>
 

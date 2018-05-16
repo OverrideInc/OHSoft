@@ -16,7 +16,7 @@ module.exports.routes = {
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
   'GET /': { action: 'view-homepage-or-redirect' },
   'GET /welcome': { action: 'dashboard/view-welcome' },
-  'GET /anexos': { action: 'documentation/view-anexos', skipAssets : true },
+  'GET /anexos': { action: 'documentation/view-anexos' },
   'GET /empresas': { action: 'management/view-empresas' },
   'GET /gempresas': { action: 'management/get-empresas' },
   'GET /get-empresa': { action: 'management/get-empresa' },

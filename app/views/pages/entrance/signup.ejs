@@ -38,11 +38,11 @@
             <input class="form-check-input" id="terms-agreement" type="checkbox" v-model="formData.agreed"> He leído y acepto los <a target="_blank" href="/terms">terminos de servicio</a>.
           </label>
         </div>
-        <p class="text-danger" v-if="cloudError==='emailAlreadyInUse'"><small>It looks like there's already an account with your email address. If you forgot your password, you can recover it <a href="password/forgot">here</a>.</small></p>
-        <p class="text-danger" v-else-if="cloudError"><small>An error occured while processing your request. Please check your information and try again, or <a href="/support">contact support</a> if the error persists.</small></p>
+        <p class="text-danger" v-if="cloudError==='emailAlreadyInUse'"><small>Tal parece que ya existe una cuenta asociada a este NIT o correo electrónico. Si cree que puede existir una cuenta asociada a este correo, puede recuperarla <a href="password/forgot">aquí</a>.</small></p>
+        <p class="text-danger" v-else-if="cloudError"><small>Ha ocurrido un error. Por favor verifique sus datos o <a href="/contact">contacte nuestro soporte</a> si el error persiste.</small></p>
         <div class="form-group">
           <ajax-button type="submit" :syncing="syncing" class="btn-dark btn-lg btn-block">
-            <i class="fas fa-plus"></i>  Crear cuenta</ajax-button>
+            <div><i class="fas fa-plus"></i>  Crear cuenta</div></ajax-button>
         </div>
       </ajax-form>
 
