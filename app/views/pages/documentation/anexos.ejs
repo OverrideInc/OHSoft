@@ -1,11 +1,12 @@
 <div id="listaanexos" v-cloak>
+   <div class="container" style="width:90%">
     <ajax-form action="listaanexos" :syncing.sync="syncing">
       <br>
       <h1 class = "text-center">Anexos</h1>
       <h5 class = "text-center">A continuación se muestra la estructura de carpetas que
       maneja la aplicación. Los anexos contienen cada uno de los documentos exigidos por la 
       ley 1072.</h5> <br>
-      <div class="container" style="width: 100%">
+      <div class="container" style="width: 100%;height:550px;overflow-y:scroll;">
         <ul class="collection with-header" style="list-style: none;">
         <li v-for="item in formData.anexos">
           <a :href="'/anexos/anexo?anexo=' + item.id + '&nit=' + formData.nit" class="secondary-content" style="width:100%">
@@ -19,7 +20,17 @@
         </li>
       </ul>
       </div>
-  </ajax-form>
+    </ajax-form>
+    </hr> </br>
+    <div class="d-flex justify-content-end">
+      <% if(me.esSuperAdmin){ %>
+        <a type="button" class="btn btn-secondary" href = "/empresas">Volver a Empresas</a>
+      <% } else { %>
+        <a type="button" class="btn btn-secondary" href="/">Volver a Inicio</a>
+      <% } %>
+    </div>
+  </div>
+  </br>
 </div>
 
 <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
