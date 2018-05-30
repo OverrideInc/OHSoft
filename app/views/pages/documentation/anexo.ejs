@@ -18,33 +18,28 @@
 			<ajax-form action="uploadfiles" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
 				<div class="form-group">
 					<label for="archivo">Archivo</label>
-					<input class="form-control" id="archivo" type="file"@change="previewFiles" ref="myFiles" accept=".docx,.pdf,.xlsx,image/*" focus-first>
-					<p class="text-danger" v-if="cloudError"><small>Por favor, seleccione un archivo para subir.</small></p>
-					<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
-						<div><i class="fas fa-arrow-alt-circle-up"></i> Subir archivo </div>
-					</ajax-button>
+					<input class="form-control" id="archivo" type="file"@change="previewFiles" ref="myFiles" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt,.pptx,.txt,.pdf" focus-first>
+					<lablel for="archivo"></lablel>
+					<div class="text-danger" v-if="formErrors.name">Por favor elija un archivo para subir.</div>
 				</div>
+				<p class="text-danger" v-if="cloudError==='fileTypeNotSupported'"><small>El tipo (la extensión) del archivo que intentó subir no es válido.</small></p>
+				<p class="text-danger" v-else-if="cloudError"><small>Ha ocurrido un error inesperado al momento de subir el archivo</small></p>
+				<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
+					<div><i class="fas fa-arrow-alt-circle-up"></i> Subir archivo </div>
+				</ajax-button>
 				<hr/>
 
 				<label for="downs">Descargar</label>
 
 				<ul id="downs">
 					<li v-for="item in formData.documents">
-						<a :href="item.url" download>{{ item.descripcion }}</a>
+						<div class="d-flex justify-content-between">
+							<a :href="item.url" download>{{ item.descripcion }}</a>
+							<a href = "\" style="color:Red"><i class="fas fa-times-circle"></i></a>
+						</div>
 					</li>
 				</ul>
 				<hr/>
-
-				<label for="downs">Eliminar archivo</label>
-
-				<fieldset>
-				<label for="nombreS"> Nombre del documento </label>
-				<select class="form-control" id = "nombreS" :class="[formData.nombre ? '' : 'is-invalid']" v-model="formData.nombre">
-					<option v-for="item in formData.lista">{{ item.nombre}}</option>
-				</select>
-				<div class="invalid-feedback" v-if="formErrors.nombre">Por favor seleccione qué documento de la lista está por subir.</div>
-				<hr>
-   			 </fieldset>
 
 			</ajax-form>
 

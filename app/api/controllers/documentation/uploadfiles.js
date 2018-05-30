@@ -45,48 +45,55 @@ module.exports = {
 			description: 'Archivo subido correctamente.'
 		},
 
+		fileTypeNotSupported:{
+			statusCode: 403,
+			description: 'El tipo de archivo no es permitido por la app.'
+		}
+
 	},
 
 
 	fn: async function (inputs, exits, req) {
+
+		var ext = inputs.name.split('.')[1];
+
+		if(ext != 'doc' && ext != 'docx' && ext != 'xls' &&
+			ext != 'xlsx' && ext != 'ppt' && ext != 'pptx' &&
+			ext != 'pdf' && ext != 'jpeg' && ext != 'jpg' &&
+			ext != 'png' && ext != 'gif' && ext != 'bmp' &&
+			ext != 'svg' && ext != 'txt'){
+			return exits.fileTypeNotSupported();
+		}
 		
 		var dir = `assets`;
-		console.log('here');
 
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 
 		dir += `/documents`;
-		console.log('tugfa');
 
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 		dir += `/${inputs.nit}`
 
-		console.log('x2 xd');
 
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 
-		console.log('here to');
 		dir += `/${inputs.anexo}`;
-		console.log('here tird');
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 
-		var nombre = inputs.nombre + '.' + inputs.name.split('.')[1]
-		console.log('here for');
+		var nombre = inputs.nombre + '.' + ext;
 		dir += `/${nombre}`;
 
-		console.log(dir);
 
 		fs.writeFile(dir, inputs.file.split(',')[1], 'base64', function (err) {
 			if (err) throw err;
-			console.log('done');
 		});
 		return exits.success();
 	}
