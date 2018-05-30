@@ -13,9 +13,9 @@ module.exports = {
       description: 'The current, unencrypted password.',
       example: 'abc123v2',
       required: true
-    }
+    },
 
-    ,password: {
+    password: {
       description: 'The new, unencrypted password.',
       example: 'abc123v2',
       required: true
@@ -23,6 +23,17 @@ module.exports = {
 
   },
 
+  exits: {
+
+    success: {
+      description: 'The requesting user agent has been successfully logged in.'
+    },
+
+    badCombo: {
+      description: `El usuario con el correo y contraseña suministrados no existe.`,
+      responseType: 'unauthorized'
+    }
+  },
 
   fn: async function (inputs, exits) {
 

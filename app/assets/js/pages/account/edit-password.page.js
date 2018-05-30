@@ -48,7 +48,7 @@ parasails.registerPage('edit-password', {
       // Clear out any pre-existing error messages.
       this.formErrors = {};
 
-      var argins = { password: this.formData.password };
+      var argins = this.formData;
       //Validate current pasword:
       if(!argins.currentPassword || !parasails.util.isValidPassword(argins.password)){
         this.formErrors.currentPassword = true;
