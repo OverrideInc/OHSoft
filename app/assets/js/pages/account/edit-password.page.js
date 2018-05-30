@@ -7,7 +7,9 @@ parasails.registerPage('edit-password', {
     syncing: false,
 
     // Form data
-    formData: { /* … */ },
+    formData: {
+      currentPassword:''
+    },
 
     // For tracking client-side validation errors in our form.
     // > Has property set to `true` for each invalid property in `formData`.
@@ -47,6 +49,10 @@ parasails.registerPage('edit-password', {
       this.formErrors = {};
 
       var argins = { password: this.formData.password };
+      //Validate current pasword:
+      if(!argins.currentPassword || !parasails.util.isValidPassword(argins.password)){
+        this.formErrors.currentPassword = true;
+      }
 
       // Validate password:
       if (!argins.password || !parasails.util.isValidPassword(argins.password)) {

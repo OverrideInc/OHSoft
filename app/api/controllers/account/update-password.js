@@ -15,7 +15,7 @@ module.exports = {
       required: true
     }
 
-    password: {
+    ,password: {
       description: 'The new, unencrypted password.',
       example: 'abc123v2',
       required: true
@@ -25,6 +25,15 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
+
+    var userRecord = await User.findOne({
+      id  : this.req.me.id
+    });
+
+    // If there was no matching user, respond thru the "badCombo" exit.
+    if(!userRecord) {
+      throw 'badCombo';
+    }
 
     // If the password doesn't match, then also exit thru "badCombo".
     await sails.helpers.passwords.checkPassword(inputs.currentPassword, userRecord.password)
