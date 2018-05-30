@@ -32,7 +32,7 @@ Cloud.setup({
     "updatePassword": {
       "verb": "PUT", 
       "url": "/api/v1/account/update-password",
-      "args": ["password"]
+      "args": ["currentPassword","password"]
     },
 
     "updateProfile": 
