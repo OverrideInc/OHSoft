@@ -50,8 +50,10 @@ parasails.registerPage('uploadfiles', {
     },
     methods: {
         previewFiles() {
-            this.formData.name = this.$refs.myFiles.files[0].name;
-            this.getBase64(this.$refs.myFiles.files[0]);
+            if(this.$refs.myFiles.files[0]){
+                this.formData.name = this.$refs.myFiles.files[0].name;
+                this.getBase64(this.$refs.myFiles.files[0]);                
+            }
         },
         submittedForm: async function () {
             alert('Se guardó el archivo correctamente');
@@ -60,11 +62,14 @@ parasails.registerPage('uploadfiles', {
         handleParsingForm: function () {
             this.formErrors = {};
             var argins = this.formData;
-            var argins = this.formData;
 
             // Validate full name:
             if (!argins.nombre) {
                 this.formErrors.nombre = true;
+            }
+
+            if(!argins.name){
+                this.formErrors.name = true;
             }
 
             if (Object.keys(this.formErrors).length > 0) {
@@ -82,10 +87,6 @@ parasails.registerPage('uploadfiles', {
             reader.onerror = function (error) {
                 console.log('Error: ', error);
             };
-        },
-        test: function(){
-            console.log('when call');
-            console.log(this.formData.lista);
         }
     }
 });  
