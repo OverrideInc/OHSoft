@@ -15,7 +15,7 @@
 				<hr>
    			 </fieldset>
 
-			<ajax-form action="uploadfiles" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+			<ajax-form action="uploadfiles" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedFormUp()" :handle-parsing="handleParsingForm">
 				<div class="form-group">
 					<label for="archivo">Archivo</label>
 					<input class="form-control" id="archivo" type="file"@change="previewFiles" ref="myFiles" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt,.pptx,.txt,.pdf" focus-first>
@@ -27,20 +27,25 @@
 				<ajax-button type="submit" :syncing="syncing" class="btn btn-success">
 					<div><i class="fas fa-arrow-alt-circle-up"></i> Subir archivo </div>
 				</ajax-button>
-				<hr/>
-				<label for="downsc">Descargar</label>
-				<div class="container" id = "downsc" style="width: 80%;height:200px;overflow-y:scroll;">
-					<ul id="downs">
-						<li v-for="item in formData.documents">
-							<div class="d-flex justify-content-between">
-								<a :href="item.url" download>{{ item.descripcion }}</a>
-								<a href = "\" style="color:Red"><i class="fas fa-times-circle"></i></a>
-							</div>
-						</li>
-					</ul>
-					<hr/>
-				</div>
 			</ajax-form>
+			<hr/>
+			<label for="downsc">Descargar</label>
+			<div class="container" id = "downsc" style="width: 80%;height:200px;overflow-y:scroll;">
+				<ul id="downs">
+					<li v-for="item in formData.documents">
+						<div class="d-flex justify-content-between">
+							<a :href="item.url" download>{{ item.descripcion }}</a>
+							<ajax-form action="deletefile" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedFormDel()" :handle-parsing="handleParsingDel">
+								<ajax-button type="submit" :syncing="syncing" class="btn btn-danger" @click="changeURL(item.url)">
+									<div><i class="fas fa-times-circle"></i> Eliminar</div>
+								</ajax-button>
+							</ajax-form>
+						</div>
+						</br>
+					</li>
+				</ul>
+				<hr/>
+			</div>
 			</hr> </br>
     		<div class="d-flex justify-content-end">
     		  <% if(me.esSuperAdmin){ %>

@@ -59,7 +59,7 @@ module.exports.routes = {
   'POST  /api/v1/deliver-contact-form-message': { action: 'deliver-contact-form-message' },
   'POST  /api/v1/documentation/uploadfiles': { action: 'documentation/uploadfiles' },
   'POST /api/v1/management/activate-account': { action: 'management/activate-account' },
-
+  'POST /api/v1/documentation/deletefile': { action: 'documentation/delete-file' },
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗

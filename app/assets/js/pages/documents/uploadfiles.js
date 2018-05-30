@@ -7,7 +7,8 @@ parasails.registerPage('uploadfiles', {
             nombre:'',
             nit:'', 
             anexo:'', 
-            name:''
+            name:'',
+            url:''
         },
         formErrors: {
         },
@@ -24,7 +25,6 @@ parasails.registerPage('uploadfiles', {
                     + encodeURIComponent('nit').replace(/[\.\+\*]/g, "\\$&") 
                     + "(?:\\=([^&]*))?)?.*$", "i"), "$1"
                 ));
-        console.log('nit = ' + nit);
         this.formData.anexo = anexoNombre;
         this.formData.nit = nit;
 
@@ -55,8 +55,12 @@ parasails.registerPage('uploadfiles', {
                 this.getBase64(this.$refs.myFiles.files[0]);                
             }
         },
-        submittedForm: async function () {
+        submittedFormUp: async function () {
             alert('Se guardó el archivo correctamente');
+            window.location.reload();
+        },
+        submittedFormDel: async function () {
+            alert('Se eliminó el archivo correctamente');
             window.location.reload();
         },
         handleParsingForm: function () {
@@ -77,6 +81,28 @@ parasails.registerPage('uploadfiles', {
             }
             
             return argins;
+        },
+        handleParsingDel: function () {
+            var argins = this.formData;
+            this.formErrors = {};
+
+            if(!argins.url){
+                this.formErrors.url = true;
+            }
+
+            if (Object.keys(this.formErrors).length > 0) {
+                 return;
+            }
+            return argins;
+        },
+        changeURL: function (url) {
+            var r = confirm("¿Está seguro que desea eliminar el archivo?")
+            if(r==true){
+                this.formData.url = url;
+            }else{
+                this.formData.url = '';
+            }
+            
         },
         getBase64: function (file) {
             var reader = new FileReader();
