@@ -56,6 +56,12 @@ parasails.registerPage('signup', {
 
       var argins = this.formData;
 
+      // Validate full nit:
+      //
+      if (!argins.nit || !parasails.util.isValidNit(argins.nit)) {
+        this.formErrors.nit = true;
+      }
+
       // Validate full name:
       if (!argins.nombre) {
         this.formErrors.nombre = true;

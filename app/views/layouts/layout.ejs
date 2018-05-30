@@ -42,13 +42,16 @@
           OHSoft
         </a>
         <div class="navbar-nav flex-row">
-          <!-- LOGGED-IN NAVIGATION -->
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/faq">Quienes somos</a>
+          <!-- GO TO HOME -->
+           <a class="nav-item nav-link ml-2 ml-md-0 mr-2 d-sm-block" href="/welcome">Inicio</a>
+          
           <!--a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Contacto</a-->
           <% if(me) { %>
           <!-- Only in desktop nav -->
           <% if(!me.esSuperAdmin){ %> 
            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 d-sm-block" href="/anexos">Anexos</a>
+           <!-- LOGGED-IN NAVIGATION -->
+          <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/faq">Quienes somos</a>
           <% } else { %>
            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 d-sm-block" href="/empresas">Empresas</a><% } %>
           <div class="nav-item dropdown d-none d-sm-block">

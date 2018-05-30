@@ -11,7 +11,7 @@
         <div class="form-group">
           <label for="nit">NIT</label>
           <input class="form-control" id="nit" type="text"  :class="[formErrors.nit ? 'is-invalid' : '']" v-model.trim="formData.nit" placeholder="123.456.789 - 0" focus-first>
-          <div class="invalid-feedback" v-if="formErrors.nit">Por favor ingrese el NIT de la empresa.</div>
+          <div class="invalid-feedback" v-if="formErrors.nit">Por favor ingrese un NIT de la empresa válido. El nit puede tener entre 8 y 15 carácteres.Ademas debe estar redactado en el formato dado por la DIAN.</div>
         </div>
         <div class="form-group">
           <label for="full-name">Nombre Empresa</label>

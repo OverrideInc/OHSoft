@@ -38,6 +38,7 @@ parasails.registerPage('edit-password', {
       // > (Note that we re-enable the syncing state here.  This is on purpose--
       // > to make sure the spinner stays there until the page navigation finishes.)
       this.syncing = true;
+      alert('Se actualizó la contraseña correctamente');
       window.location = '/account';
     },
 
@@ -48,7 +49,7 @@ parasails.registerPage('edit-password', {
       var argins = { password: this.formData.password };
 
       // Validate password:
-      if(!argins.password) {
+      if (!argins.password || !parasails.util.isValidPassword(argins.password)) {
         this.formErrors.password = true;
       }
 

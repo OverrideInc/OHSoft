@@ -24,6 +24,7 @@
 						<div><i class="fas fa-arrow-alt-circle-up"></i> Subir archivo </div>
 					</ajax-button>
 				</div>
+				<hr/>
 
 				<label for="downs">Descargar</label>
 
@@ -32,6 +33,18 @@
 						<a :href="item.url" download>{{ item.descripcion }}</a>
 					</li>
 				</ul>
+				<hr/>
+
+				<label for="downs">Eliminar archivo</label>
+
+				<fieldset>
+				<label for="nombreS"> Nombre del documento </label>
+				<select class="form-control" id = "nombreS" :class="[formData.nombre ? '' : 'is-invalid']" v-model="formData.nombre">
+					<option v-for="item in formData.lista">{{ item.nombre}}</option>
+				</select>
+				<div class="invalid-feedback" v-if="formErrors.nombre">Por favor seleccione qué documento de la lista está por subir.</div>
+				<hr>
+   			 </fieldset>
 
 			</ajax-form>
 

@@ -926,6 +926,15 @@
     return re.test(value);
   }
 
+  parasails.util.isValidNit = function(value){
+    if(!value || typeof value != 'string'){
+      return false;
+    }
+
+    var re = /(?=.*\d)(.)(?=[-])(?=.\d).{8,15}/;
+    return re.test(value);
+  }
+
   /**
    * parasails.utils
    *
