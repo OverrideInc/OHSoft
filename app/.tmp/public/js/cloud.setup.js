@@ -91,13 +91,6 @@ Cloud.setup({
       "args": ["name","anexo","nombre","nit"] 
     },
 
-    "deletefile": 
-    { 
-      "verb": "POST", 
-      "url": "/api/v1/documentation/deletefile", 
-      "args": ["url"] 
-    },
-
     "activate": 
     { 
       "verb": "POST", 
